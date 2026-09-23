@@ -1,0 +1,48 @@
+{
+  "event": "EXOMESH_AGENTIC_GUARD_DEMO",
+  "timestamp": "2026-09-20T11:26:18.133Z",
+  "scenarios": [
+    {
+      "scenario": "A",
+      "status": "ALLOW_PASSTHROUGH",
+      "wasmUs": 63.7,
+      "code": null,
+      "plainTextWarning": null
+    },
+    {
+      "scenario": "B",
+      "status": "DEGRADED_WARN",
+      "wasmUs": 11.4,
+      "code": null,
+      "plainTextWarning": null
+    },
+    {
+      "scenario": "C",
+      "status": "FAIL_CLOSED",
+      "wasmUs": 81.6,
+      "code": "VENUE_DRIFT_REJECTED",
+      "plainTextWarning": "ALERT: Signature blocked — contract 0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb is not on your approved venue whitelist (anti-phishing).",
+      "plainTextWarnings": [
+        "ALERT: Signature blocked — contract 0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb is not on your approved venue whitelist (anti-phishing)."
+      ],
+      "reasonCodes": [
+        "VENUE_DRIFT_REJECTED"
+      ]
+    },
+    {
+      "scenario": "D",
+      "status": "CHANNEL_SEVERED",
+      "wasmUs": 5.8,
+      "code": "CHANNEL_SEVERED",
+      "plainTextWarning": "ALERT: Signing channel is severed — wait before retrying (FOMO throttle active).",
+      "plainTextWarnings": [
+        "ALERT: Too many rapid submit attempts (4) — signing channel severed to prevent panic trading.",
+        "ALERT: Signing channel is severed — wait before retrying (FOMO throttle active)."
+      ],
+      "reasonCodes": [
+        "MAX_ATTEMPTS_EXCEEDED_SEVERED",
+        "CHANNEL_SEVERED"
+      ]
+    }
+  ]
+}

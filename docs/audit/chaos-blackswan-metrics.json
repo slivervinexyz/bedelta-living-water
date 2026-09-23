@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-31T13:44:54.363Z",
+  "chainId": 42161,
+  "gitCommitHash": "53f62fbe4120b4bc2b5dd3827a62b8dd6e2cf4bd",
+  "totalScenarios": 255,
+  "blockedToxicAttacks": 255,
+  "failClosedRate": "100.00%",
+  "reasonPrefixMismatches": 0,
+  "isolateCrashes": 0,
+  "capitalLossUsd": 0
+}

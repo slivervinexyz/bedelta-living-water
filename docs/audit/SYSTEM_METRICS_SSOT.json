@@ -1,0 +1,397 @@
+{
+  "schema": "silvervine.system-metrics.ssot.v1",
+  "protocol": "SliverVine Protocol",
+  "tagline": "SliverVine ExoMesh — Pre-Consensus Intent Firewall for AI Agents on Arbitrum",
+  "version": "v1.0",
+  "version_name": "BeDelta Living Water v1.0",
+  "version_symbol": "BeΔ Living Water",
+  "ssrc_codename": "SSRC",
+  "ssrc_full_name": "Slivervine Stylus ReflexCore",
+  "generatedAt": "2026-09-21T03:49:00.000Z",
+  "release_anchor": {
+    "branch": "main",
+    "verified_commit": "0885225",
+    "baseline_commit": "572e5cd",
+    "baseline_label": "GMX on-chain invariant stack @ 572e5cd",
+    "updated_at": "2026-09-21T03:49:00.000Z"
+  },
+  "badges": {
+    "vitest": {
+      "test_files_passed": 254,
+      "total_tests_passed": 1206,
+      "status": "100% PASS (1 skipped)"
+    },
+    "dune_telemetry": {
+      "architecture": "dual_dashboard",
+      "dashboards": [
+        {
+          "id": "operational_shield",
+          "slug": "slivervine-protocol",
+          "url": "https://dune.com/silvervinelabs/slivervine-protocol",
+          "role": "Operational Shield",
+          "export_command": "pnpm export:dune",
+          "csv_ssot": "docs/audit/exomesh-dune-telemetry.csv",
+          "mode": "simulated_replay",
+          "replay_row_count": 577,
+          "rollup": {
+            "total_rows": 577,
+            "fail_closed_count": 545,
+            "simulated_loss_prevented_usd_total": 13496185,
+            "gas_saved_usd_total": 136.25
+          },
+          "features": [
+            "modeled_counterfactual_volume",
+            "gas_saved_usd",
+            "fail_closed_intercept_donut",
+            "simulated_loss_prevented_usd"
+          ]
+        },
+        {
+          "id": "sepsb_stress_matrix",
+          "slug": "slivervine-sepsb-stress",
+          "url": "https://dune.com/silvervinelabs/slivervine-sepsb-stress",
+          "role": "SEPSB Quant Matrix",
+          "export_command": "pnpm audit:sepsb",
+          "csv_ssot": "docs/audit/sepsb-stress-telemetry.csv",
+          "true_positive_rate_pct": 100,
+          "false_positive_rate_pct": 0,
+          "venues": [
+            "gmx",
+            "pendle",
+            "usdai",
+            "hyperliquid",
+            "variational"
+          ],
+          "reflex_latency_cap_us": 50,
+          "hardware_context": "Intel(R) Core(TM) Ultra 7 155H"
+        }
+      ]
+    },
+    "historical_backtest": {
+      "tier1_scenarios_passed": "3/3 FAIL_CLOSED",
+      "tier2_adversarial_intercepts": "2/2 (MEV + Honeypot RPC)",
+      "tier3_monte_carlo_runs": 10000,
+      "tier3_intercept_rate": "100%",
+      "reflex_latency_p50_us": 0.43,
+      "total_loss_prevented_usd": 1326412.79,
+      "ssot": "docs/audit/HISTORICAL_BLACKSWAN_BACKTEST_SSOT.json"
+    },
+    "hot_path": {
+      "terminology_ssot": "Zero-Allocation Hot-Path",
+      "ring_slab_term": "Pre-Allocated Ring Slab",
+      "ring_slab_sources": [
+        "src/wasm/intent_core.rs",
+        "src/core/intent-core-ring.ts",
+        "contracts/src/libs/IntentRingSlabLib.sol"
+      ],
+      "alloc": "<16 KiB",
+      "iterations": "10k"
+    },
+    "stylus_probe": {
+      "version": "V2.0",
+      "passed": 9,
+      "total": 9,
+      "stage": "Roadmap"
+    },
+    "coverage": {
+      "target": "risk-control.ts",
+      "percentage": "100%"
+    },
+    "chaos_matrix": {
+      "cases": 255,
+      "total": 255,
+      "mode": "Fail-Closed"
+    },
+    "latency": {
+      "e2e_p50_us": 106,
+      "reflex_p50_us": 15
+    },
+    "typescript": {
+      "errors": 0
+    },
+    "codebase_freeze": {
+      "active": true,
+      "phase": 4,
+      "frozenAt": "2026-09-14"
+    },
+    "license": "BUSL-1.1",
+    "arbitrum": {
+      "status": "Sepolia Verified",
+      "target_chain_id": 42161,
+      "readiness": "Ready"
+    }
+  },
+  "bundle_telemetry": {
+    "rawKiB": 111.19,
+    "gzipKiB": 40.5,
+    "wranglerTotalUploadKiB": 111.19,
+    "wranglerTotalGzipKiB": 40.5,
+    "limitKiB": 150,
+    "leanWarnRawKiB": 285,
+    "leanWarnGzipKiB": 71,
+    "pass": true
+  },
+  "protocol_scope": {
+    "total_venues": 5,
+    "chaos_cases": 255,
+    "historical_backtest_runs": 10000,
+    "telemetry_rows": 577
+  },
+  "system_architecture": {
+    "capabilities": {
+      "x402_compatibility": "ORTHOGONAL_PRE_CONSENSUS_SAFEGUARD"
+    },
+    "tags": [
+      "pre_consensus_risk_engine",
+      "v8_wasm_isolate",
+      "x402_orthogonal",
+      "erc7683_orthogonal",
+      "agentic_commerce_safeguard"
+    ]
+  },
+  "benchmark_environment": {
+    "detectedAt": "2026-09-21T02:02:09.118Z",
+    "platform": "linux",
+    "arch": "x64",
+    "nodeVersion": "v22.23.2",
+    "cpuModel": "AMD EPYC 7763 64-Core Processor",
+    "cpuCores": 2,
+    "cpuSpeedMhz": 0,
+    "totalMemoryMb": 7938
+  },
+  "sepsb_benchmark": {
+    "ssot": "docs/audit/SEPSB_BENCHMARK_SSOT.json",
+    "corpus_snapshot": "docs/audit/SEPSB_CORPUS_SNAPSHOT.json",
+    "stress_telemetry_csv": "docs/audit/sepsb-stress-telemetry.csv",
+    "benchmark_title": "SliverVine ExoMesh Pre-Consensus Security Benchmark (SEPSB)",
+    "standard_version": "SEPSB-v1.0-Santenmoku",
+    "verdict": "PASS",
+    "truePositiveRatePct": 100,
+    "falsePositiveRatePct": 0,
+    "reflexLatencyP50Us": 1.283,
+    "reflexLatencyP99Us": 6.102
+  },
+  "onchain_indexer_pipeline": {
+    "status": "LIVE_EXPORT",
+    "live_row_count": 5,
+    "script": "scripts/fetch-onchain-dune-telemetry.ts",
+    "command": "pnpm export:dune:onchain",
+    "csv_ssot": "docs/audit/onchain-dune-telemetry.csv",
+    "gate_contract": "0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1",
+    "networks": [
+      "arbitrum_one",
+      "arbitrum_sepolia"
+    ],
+    "indexed_events": [
+      "IntentAttested",
+      "SoilResistanceTripped"
+    ],
+    "on_chain_event_aliases": {
+      "SoilResistanceTripped": "RiskTripBlocked"
+    },
+    "readiness_note": "5-row live on-chain CSV lane (ExoMesh solidity/stylus + Sanctuary gate) — Arbiscan-verifiable tx hashes",
+    "gate_contracts": {
+      "42161": "0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1",
+      "421614": "0xc66F96611a737c4e58706D0955594456eAb88959"
+    }
+  },
+  "deployments": {
+    "ssot_source": "src/config/contract-deployments.ts",
+    "eip712_domain": "SliverVineExoMesh",
+    "synced_at": "2026-09-12T06:00:00.000Z",
+    "mainnet_ignition_tx": "0x54c153e9a41f704b5eb0ae554eac593d1110d62bd826ff094e72f2bd60c1b0c6",
+    "stylus_coprocessor_mainnet": "0xc23587d6573dd134f95b02b0202ffbf84686625e",
+    "chains": {
+      "arbitrum_one": {
+        "chain_id": 42161,
+        "network": "mainnet",
+        "gate_address": "0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1",
+        "domain_separator": "0xf866d2f8ccb8e567fac3e781b816a26a7fe86fbf15453c23a1594f0987a8233c",
+        "live": [
+          {
+            "name": "SliverVineGate",
+            "address": "0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "EIP-712 consume-once attestation anchor · ExoMesh domain",
+            "source": "SliverVineGate/script/DeployArbitrumOneGate.s.sol"
+          },
+          {
+            "name": "SliverVineAgentPolicyGuardV2",
+            "address": "0x5df192f9454fd02a89e768632cb5da0762a774bc",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "ERC-8196 agent policy pre-screen · stylusCoprocessor wired",
+            "source": "scripts/deploy-policy-guard-v2-mainnet.ts"
+          },
+          {
+            "name": "GmxSoilMatrixSwitch",
+            "address": "0xd840ad013d3be8a363d537a80d5ea8700f7a34c4",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Single-SLOAD defense matrix bitmap",
+            "source": "scripts/deploy-policy-guard-v2-mainnet.ts"
+          },
+          {
+            "name": "SliverVineRiskOracleV2",
+            "address": "0xc7f577ac7e1270e6e99e1b700301c25e98df2456",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Risk oracle feed for PolicyGuardV2 · ExoMesh domain",
+            "source": "scripts/deploy-policy-guard-v2-mainnet.ts"
+          },
+          {
+            "name": "SliverVineSoilCoprocessor",
+            "address": "0xc23587d6573dd134f95b02b0202ffbf84686625e",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Stylus on-chain soil coprocessor (Engine A · PolicyGuardV2 stylusCoprocessor gate)",
+            "source": "scripts/deploy-stylus-mainnet.ts"
+          }
+        ],
+        "superseded": [
+          {
+            "name": "SliverVineGate (Sanctuary ignition · legacy superseded)",
+            "address": "0xb174118bC0B84e8D6D59EEF2339e29bF7FCf8BF1",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          },
+          {
+            "name": "SliverVineAgentPolicyGuardV2 v0",
+            "address": "0xfd98cadb7018f692ec58cd4359e0c0399f4f8781",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded by ExoMesh redeploy (stylusCoprocessor=0)"
+          },
+          {
+            "name": "SliverVineGatePolicyLink v0",
+            "address": "0xe4ef5350963241c49a29e72a4cf093208cd19af0",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded — native setPolicyGuard on new Gate"
+          },
+          {
+            "name": "GmxSoilMatrixSwitch v0",
+            "address": "0x4129aee97e68aa3712c56fe9ec48bf369782f99b",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          },
+          {
+            "name": "SliverVineRiskOracleV2 v0",
+            "address": "0xfadb14759a3d3c7e976697de61bf62627f14ec93",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          },
+          {
+            "name": "SliverVineAgentPolicyGuard v1",
+            "address": "0xc66f96611a737c4e58706d0955594456eab88959",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Superseded by PolicyGuardV2"
+          },
+          {
+            "name": "SliverVineAgentPolicyGuard v0",
+            "address": "0x3e4298e2b8d4e30396a54c1817eb71c9272ffb4b",
+            "network": "mainnet",
+            "chain_ids": [
+              42161
+            ],
+            "role": "Legacy bootstrap policy guard"
+          }
+        ]
+      },
+      "arbitrum_sepolia": {
+        "chain_id": 421614,
+        "network": "sepolia",
+        "gate_address": "0xc66F96611a737c4e58706D0955594456eAb88959",
+        "domain_separator": "0x411948a5917ff9bb6a62735a498edc0e1b9f64f5a7d1366863a72a539aaadae3",
+        "live": [
+          {
+            "name": "SliverVineGate",
+            "address": "0xc66F96611a737c4e58706D0955594456eAb88959",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "EIP-712 consume-once attestation anchor · ExoMesh domain",
+            "source": "scripts/deploy-sepolia-gate.sol"
+          },
+          {
+            "name": "SliverVineRiskOracle",
+            "address": "0x6CA7eA722F139F3C23280ebc973caff3B17d8fEa",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "EIP-712 offline risk report · STATUS_SHUTDOWN flush · ExoMesh domain",
+            "source": "scripts/deploy-sepolia-gate.sol"
+          },
+          {
+            "name": "IngressSafetySwitch",
+            "address": "0xc1Eb1624A3A93e969De57466b1CDbD0e0189D192",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "Pillar Set X compliance filter · async escort ingress",
+            "source": "scripts/deploy-sepolia-gate.sol"
+          }
+        ],
+        "superseded": [
+          {
+            "name": "SliverVineGate (Sanctuary dual-deploy · legacy superseded)",
+            "address": "0xb174118bC0B84e8D6D59EEF2339e29bF7FCf8BF1",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          },
+          {
+            "name": "SliverVineRiskOracle v0",
+            "address": "0x3FFa2539f502682E8145e6Eb427ff78d258D53a4",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          },
+          {
+            "name": "IngressSafetySwitch v0",
+            "address": "0x3E4298e2b8d4e30396A54C1817Eb71c9272Ffb4B",
+            "network": "sepolia",
+            "chain_ids": [
+              421614
+            ],
+            "role": "Superseded by ExoMesh redeploy"
+          }
+        ]
+      }
+    }
+  }
+}

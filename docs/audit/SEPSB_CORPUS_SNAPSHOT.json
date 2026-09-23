@@ -1,0 +1,827 @@
+{
+  "schema": "silvervine.sepsb-corpus-snapshot.v1",
+  "benchmark_title": "SliverVine ExoMesh Pre-Consensus Security Benchmark (SEPSB)",
+  "standard_version": "SEPSB-v1.0-Santenmoku",
+  "generatedAt": "2026-09-21T02:02:09.118Z",
+  "sources": {
+    "toxic": "tests/p0/corpus/toxic-set.json",
+    "benign": "tests/p0/corpus/benign-set.json"
+  },
+  "corpus": {
+    "toxic": {
+      "schema": "silvervine.p0.corpus.toxic.v1",
+      "label": "toxic",
+      "cases": [
+        {
+          "id": "toxic-infinite-approve-erc20",
+          "category": "infinite_approve",
+          "venue": "gmx",
+          "lane": "retail_risk",
+          "expected": "block",
+          "payload": {
+            "method": "eth_sendTransaction",
+            "params": [
+              {
+                "from": "0x1111111111111111111111111111111111111111",
+                "to": "0xaf88d065e77c1c973b2696121c3f3f3f3f3f3f3f",
+                "data": "0x095ea7b3000000000000000000000000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+              }
+            ],
+            "skipIntentGate": true
+          }
+        },
+        {
+          "id": "toxic-permit2-infinite-approve",
+          "category": "permit2_phishing",
+          "venue": "gmx",
+          "lane": "retail_risk",
+          "expected": "block",
+          "payload": {
+            "method": "eth_sendTransaction",
+            "params": [
+              {
+                "from": "0x1111111111111111111111111111111111111111",
+                "to": "0x000000000022d473030f116ddee9f6b43ac78b6",
+                "dataPreset": "permit2_phishing"
+              }
+            ],
+            "skipIntentGate": true
+          }
+        },
+        {
+          "id": "toxic-domain-drift-eip712",
+          "category": "domain_drift",
+          "venue": "pendle",
+          "lane": "retail_risk",
+          "expected": "block",
+          "payload": {
+            "method": "eth_signTypedData_v4",
+            "params": [
+              "0x1111111111111111111111111111111111111111",
+              "{\"domain\":{\"name\":\"Permit\",\"version\":\"1\",\"chainId\":42161,\"verifyingContract\":\"0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"},\"types\":{\"Permit\":[{\"name\":\"spender\",\"type\":\"address\"}]},\"primaryType\":\"Permit\",\"message\":{\"spender\":\"0xdddddddddddddddddddddddddddddddddddddddd\"}}"
+            ]
+          }
+        },
+        {
+          "id": "toxic-ai-4th-strike-retry",
+          "category": "ai_4th_strike_retry",
+          "venue": "hyperliquid",
+          "lane": "retail_intent_strike",
+          "expected": "block",
+          "payload": {
+            "maxAttempts": 3,
+            "strikes": 4,
+            "venueBit": 1
+          }
+        },
+        {
+          "id": "toxic-gmx-oi-skew",
+          "category": "gmx_oi_skew",
+          "venue": "gmx",
+          "lane": "gmx_flags",
+          "expected": "block",
+          "payload": {
+            "oiLong": 1800,
+            "oiShort": 200,
+            "tvl": 2000,
+            "collateral": 1.2
+          }
+        },
+        {
+          "id": "toxic-pendle-oracle-lag",
+          "category": "pendle_oracle_lag",
+          "venue": "pendle",
+          "lane": "pendle_flags",
+          "expected": "block",
+          "payload": {
+            "yieldCurrent": 0.08,
+            "yieldOracle": 0.05
+          }
+        },
+        {
+          "id": "toxic-usdai-peg-drift",
+          "category": "usdai_peg_drift",
+          "venue": "usdai",
+          "lane": "usdai_flags",
+          "expected": "block",
+          "payload": {
+            "oracleAgeMs": 1000,
+            "pegDriftBps": 45,
+            "navDeviationBps": 5
+          }
+        },
+        {
+          "id": "toxic-usdai-oracle-stale",
+          "category": "usdai_oracle_stale",
+          "venue": "usdai",
+          "lane": "usdai_flags",
+          "expected": "block",
+          "payload": {
+            "oracleAgeMs": 8000000,
+            "pegDriftBps": 5,
+            "navDeviationBps": 5
+          }
+        },
+        {
+          "id": "toxic-hyperliquid-spread-jitter",
+          "category": "hyperliquid_spread_jitter",
+          "venue": "hyperliquid",
+          "lane": "hyperliquid_flags",
+          "expected": "block",
+          "payload": {
+            "sessionValid": true,
+            "orderSize": 1,
+            "maxSize": 100,
+            "spreadBps": 35,
+            "rpm": 30
+          }
+        },
+        {
+          "id": "toxic-hyperliquid-session-velocity",
+          "category": "hyperliquid_session_velocity",
+          "venue": "hyperliquid",
+          "lane": "hyperliquid_flags",
+          "expected": "block",
+          "payload": {
+            "sessionValid": false,
+            "orderSize": 1,
+            "maxSize": 100,
+            "spreadBps": 10,
+            "rpm": 30
+          }
+        },
+        {
+          "id": "toxic-variational-stale-quote",
+          "category": "variational_stale_quote",
+          "venue": "variational",
+          "lane": "variational_flags",
+          "expected": "block",
+          "payload": {
+            "quotePriceUsd": 3000,
+            "oracleMarkUsd": 3000,
+            "quoteTimestampMs": 1699999000000,
+            "nowMs": 1700000000000,
+            "tradeSizeUsd": 1000,
+            "olpDepthUsd": 100000
+          }
+        },
+        {
+          "id": "toxic-variational-olp-threshold",
+          "category": "variational_olp_threshold",
+          "venue": "variational",
+          "lane": "variational_flags",
+          "expected": "block",
+          "payload": {
+            "quotePriceUsd": 3000,
+            "oracleMarkUsd": 3000,
+            "quoteTimestampMs": 1700000000000,
+            "nowMs": 1700000000000,
+            "tradeSizeUsd": 50000,
+            "olpDepthUsd": 100000
+          }
+        },
+        {
+          "id": "toxic-soil-cross-venue",
+          "category": "soil_cross_venue",
+          "venue": "hyperliquid",
+          "lane": "gateway_soil",
+          "expected": "block",
+          "payload": {
+            "symbol": "ETH",
+            "soil": {
+              "hlSpot": 3500,
+              "hlPerp": 3500,
+              "dydxPerp": 3000,
+              "depthUsd": 500000,
+              "orderSizeUsd": 500,
+              "accountBalanceUsd": 10000,
+              "maxSlippage": 0.005
+            }
+          }
+        },
+        {
+          "id": "toxic-pendle-gmx-open-thin-liquidity",
+          "category": "pendle_gmx_open_violation",
+          "venue": "pendle",
+          "lane": "pendle_gmx_cross",
+          "expected": "block",
+          "payload": {
+            "ptMarket": {
+              "expiry": 1700086400,
+              "historicalYield24h": 0.06,
+              "liquidityConstant": 100
+            },
+            "gmxPos": {
+              "intent": "open",
+              "sizeNotionalUsd": 100000
+            },
+            "assetUsdPrice": 3000
+          }
+        },
+        {
+          "id": "toxic-venue-drift-contract",
+          "category": "venue_drift",
+          "venue": "variational",
+          "lane": "retail_venue",
+          "expected": "block",
+          "payload": {
+            "contract": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        {
+          "id": "toxic-shallow-depth-honeypot",
+          "category": "depth_insufficient",
+          "venue": "gmx",
+          "lane": "gateway_soil",
+          "expected": "block",
+          "payload": {
+            "symbol": "ETH",
+            "soil": {
+              "hlSpot": 3500,
+              "hlPerp": 3500,
+              "dydxPerp": 3498,
+              "depthUsd": 50000,
+              "orderSizeUsd": 500,
+              "accountBalanceUsd": 10000,
+              "maxSlippage": 0.005
+            }
+          }
+        }
+      ]
+    },
+    "benign": {
+      "schema": "silvervine.p0.corpus.benign.v1",
+      "label": "benign",
+      "cases": [
+        {
+          "id": "benign-normal-transfer-gmx",
+          "category": "normal_transfer",
+          "venue": "gmx",
+          "lane": "retail_risk",
+          "expected": "allow",
+          "payload": {
+            "method": "eth_sendTransaction",
+            "params": [
+              {
+                "from": "0x1111111111111111111111111111111111111111",
+                "to": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "value": "0x0"
+              }
+            ]
+          }
+        },
+        {
+          "id": "benign-gmx-increase",
+          "category": "gmx_increase",
+          "venue": "gmx",
+          "lane": "retail_risk",
+          "expected": "allow",
+          "payload": {
+            "method": "eth_sendTransaction",
+            "params": [
+              {
+                "from": "0x1111111111111111111111111111111111111111",
+                "to": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "data": "0x7ebc83b20000000000000000000000000000000000000000000000000000000000000000"
+              }
+            ],
+            "skipIntentGate": true
+          }
+        },
+        {
+          "id": "benign-gmx-decrease",
+          "category": "gmx_decrease",
+          "venue": "gmx",
+          "lane": "gmx_flags",
+          "expected": "allow",
+          "payload": {
+            "oiLong": 520,
+            "oiShort": 480,
+            "tvl": 2000,
+            "collateral": 1.2
+          }
+        },
+        {
+          "id": "benign-pendle-swap",
+          "category": "pendle_swap",
+          "venue": "pendle",
+          "lane": "pendle_flags",
+          "expected": "allow",
+          "payload": {
+            "yieldCurrent": 0.051,
+            "yieldOracle": 0.05
+          }
+        },
+        {
+          "id": "benign-usdai-vault-deposit",
+          "category": "usdai_vault_deposit",
+          "venue": "usdai",
+          "lane": "usdai_flags",
+          "expected": "allow",
+          "payload": {
+            "oracleAgeMs": 60000,
+            "pegDriftBps": 8,
+            "navDeviationBps": 5
+          }
+        },
+        {
+          "id": "benign-usdai-peg-stable",
+          "category": "usdai_peg_stable",
+          "venue": "usdai",
+          "lane": "usdai_flags",
+          "expected": "allow",
+          "payload": {
+            "oracleAgeMs": 120000,
+            "pegDriftBps": 12,
+            "navDeviationBps": 10
+          }
+        },
+        {
+          "id": "benign-hyperliquid-rfq-clean",
+          "category": "hyperliquid_rfq_clean",
+          "venue": "hyperliquid",
+          "lane": "hyperliquid_flags",
+          "expected": "allow",
+          "payload": {
+            "sessionValid": true,
+            "orderSize": 5,
+            "maxSize": 100,
+            "spreadBps": 12,
+            "rpm": 45
+          }
+        },
+        {
+          "id": "benign-hyperliquid-session-key",
+          "category": "hyperliquid_session_key",
+          "venue": "hyperliquid",
+          "lane": "hyperliquid_flags",
+          "expected": "allow",
+          "payload": {
+            "sessionValid": true,
+            "orderSize": 2,
+            "maxSize": 50,
+            "spreadBps": 8,
+            "rpm": 20
+          }
+        },
+        {
+          "id": "benign-variational-trade-clean",
+          "category": "variational_trade_clean",
+          "venue": "variational",
+          "lane": "variational_flags",
+          "expected": "allow",
+          "payload": {
+            "quotePriceUsd": 3000,
+            "oracleMarkUsd": 3000,
+            "quoteTimestampMs": 1700000000000,
+            "nowMs": 1700000000200,
+            "tradeSizeUsd": 5000,
+            "olpDepthUsd": 200000
+          }
+        },
+        {
+          "id": "benign-variational-rfq-normal",
+          "category": "variational_rfq_normal",
+          "venue": "variational",
+          "lane": "variational_flags",
+          "expected": "allow",
+          "payload": {
+            "quotePriceUsd": 2998,
+            "oracleMarkUsd": 3000,
+            "quoteTimestampMs": 1700000000000,
+            "nowMs": 1700000000100,
+            "tradeSizeUsd": 2000,
+            "olpDepthUsd": 150000
+          }
+        },
+        {
+          "id": "benign-trusted-infinite-approve",
+          "category": "trusted_approve",
+          "venue": "gmx",
+          "lane": "retail_approve",
+          "expected": "allow",
+          "payload": {
+            "token": "0xaf88d065e77c1c973b2696121c3f3f3f3f3f3f3f",
+            "spender": "0xdddddddddddddddddddddddddddddddddddddddd",
+            "amountWei": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+            "infinite": true
+          }
+        },
+        {
+          "id": "benign-observatory-emergency-close",
+          "category": "observatory_emergency_close",
+          "venue": "pendle",
+          "lane": "pendle_gmx_cross",
+          "expected": "allow",
+          "observatoryParadox": true,
+          "payload": {
+            "ptMarket": {
+              "expiry": 1700086400,
+              "historicalYield24h": 0.06,
+              "liquidityConstant": 100
+            },
+            "gmxPos": {
+              "intent": "close",
+              "sizeNotionalUsd": 100000
+            },
+            "assetUsdPrice": 3000
+          }
+        },
+        {
+          "id": "benign-observatory-reduce-position",
+          "category": "observatory_reduce",
+          "venue": "pendle",
+          "lane": "pendle_gmx_cross",
+          "expected": "allow",
+          "observatoryParadox": true,
+          "payload": {
+            "ptMarket": {
+              "expiry": 1700086400,
+              "historicalYield24h": 0.06,
+              "liquidityConstant": 100
+            },
+            "gmxPos": {
+              "intent": "reduce",
+              "sizeNotionalUsd": 100000
+            },
+            "assetUsdPrice": 3000
+          }
+        },
+        {
+          "id": "benign-eip712-allowlisted-permit",
+          "category": "eip712_permit",
+          "venue": "pendle",
+          "lane": "retail_risk",
+          "expected": "allow",
+          "payload": {
+            "method": "eth_signTypedData_v4",
+            "params": [
+              "0x1111111111111111111111111111111111111111",
+              "{\"domain\":{\"name\":\"Permit\",\"version\":\"1\",\"chainId\":42161,\"verifyingContract\":\"0xaf88d065e77c1c973b2696121c3f3f3f3f3f3f3f\"},\"types\":{\"Permit\":[{\"name\":\"spender\",\"type\":\"address\"}]},\"primaryType\":\"Permit\",\"message\":{\"spender\":\"0xdddddddddddddddddddddddddddddddddddddddd\"}}"
+            ]
+          }
+        },
+        {
+          "id": "benign-gmx-healthy-open",
+          "category": "gmx_open_healthy",
+          "venue": "gmx",
+          "lane": "pendle_gmx_cross",
+          "expected": "allow",
+          "payload": {
+            "gmxPos": {
+              "intent": "open",
+              "sizeNotionalUsd": 50000
+            },
+            "assetUsdPrice": 3000
+          }
+        }
+      ]
+    }
+  },
+  "lastRun": {
+    "verdict": "PASS",
+    "toxicResults": [
+      {
+        "id": "toxic-infinite-approve-erc20",
+        "category": "infinite_approve",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "UNAUTHORIZED_SPENDER_REJECTED",
+        "setType": "toxic",
+        "venue": "gmx",
+        "reflexLatencyUs": 37.044
+      },
+      {
+        "id": "toxic-permit2-infinite-approve",
+        "category": "permit2_phishing",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "UNAUTHORIZED_SPENDER_REJECTED",
+        "setType": "toxic",
+        "venue": "gmx",
+        "reflexLatencyUs": 13.913
+      },
+      {
+        "id": "toxic-domain-drift-eip712",
+        "category": "domain_drift",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "VENUE_DRIFT_REJECTED",
+        "setType": "toxic",
+        "venue": "pendle",
+        "reflexLatencyUs": 42.522
+      },
+      {
+        "id": "toxic-ai-4th-strike-retry",
+        "category": "ai_4th_strike_retry",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "MAX_ATTEMPTS_OR_DRIFT",
+        "setType": "toxic",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 25.015
+      },
+      {
+        "id": "toxic-gmx-oi-skew",
+        "category": "gmx_oi_skew",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=3",
+        "setType": "toxic",
+        "venue": "gmx",
+        "reflexLatencyUs": 23.443
+      },
+      {
+        "id": "toxic-pendle-oracle-lag",
+        "category": "pendle_oracle_lag",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=9",
+        "setType": "toxic",
+        "venue": "pendle",
+        "reflexLatencyUs": 43.493
+      },
+      {
+        "id": "toxic-usdai-peg-drift",
+        "category": "usdai_peg_drift",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=524289",
+        "setType": "toxic",
+        "venue": "usdai",
+        "reflexLatencyUs": 48.472
+      },
+      {
+        "id": "toxic-usdai-oracle-stale",
+        "category": "usdai_oracle_stale",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=262145",
+        "setType": "toxic",
+        "venue": "usdai",
+        "reflexLatencyUs": 23.503
+      },
+      {
+        "id": "toxic-hyperliquid-spread-jitter",
+        "category": "hyperliquid_spread_jitter",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=513",
+        "setType": "toxic",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 15.015
+      },
+      {
+        "id": "toxic-hyperliquid-session-velocity",
+        "category": "hyperliquid_session_velocity",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=129",
+        "setType": "toxic",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 35.015
+      },
+      {
+        "id": "toxic-variational-stale-quote",
+        "category": "variational_stale_quote",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=4097",
+        "setType": "toxic",
+        "venue": "variational",
+        "reflexLatencyUs": 38.473
+      },
+      {
+        "id": "toxic-variational-olp-threshold",
+        "category": "variational_olp_threshold",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "flags=8193",
+        "setType": "toxic",
+        "venue": "variational",
+        "reflexLatencyUs": 39.482
+      },
+      {
+        "id": "toxic-soil-cross-venue",
+        "category": "soil_cross_venue",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "CROSS_VENUE_SLIPPAGE=14.2857%>0.48000000000000004%|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+        "setType": "toxic",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 31.015
+      },
+      {
+        "id": "toxic-pendle-gmx-open-thin-liquidity",
+        "category": "pendle_gmx_open_violation",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "FAIL_CLOSED_BLOCK",
+        "setType": "toxic",
+        "venue": "pendle",
+        "reflexLatencyUs": 32.583
+      },
+      {
+        "id": "toxic-venue-drift-contract",
+        "category": "venue_drift",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "VENUE_DRIFT_REJECTED",
+        "setType": "toxic",
+        "venue": "variational",
+        "reflexLatencyUs": 59.492
+      },
+      {
+        "id": "toxic-shallow-depth-honeypot",
+        "category": "depth_insufficient",
+        "expected": "block",
+        "actual": "block",
+        "pass": true,
+        "detail": "DEPTH_USD=50000<99980|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+        "setType": "toxic",
+        "venue": "gmx",
+        "reflexLatencyUs": 35.743
+      }
+    ],
+    "benignResults": [
+      {
+        "id": "benign-normal-transfer-gmx",
+        "category": "normal_transfer",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "setType": "benign",
+        "venue": "gmx",
+        "reflexLatencyUs": 25.493
+      },
+      {
+        "id": "benign-gmx-increase",
+        "category": "gmx_increase",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "setType": "benign",
+        "venue": "gmx",
+        "reflexLatencyUs": 23.522
+      },
+      {
+        "id": "benign-gmx-decrease",
+        "category": "gmx_decrease",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "gmx",
+        "reflexLatencyUs": 40.503
+      },
+      {
+        "id": "benign-pendle-swap",
+        "category": "pendle_swap",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "pendle",
+        "reflexLatencyUs": 38.472
+      },
+      {
+        "id": "benign-usdai-vault-deposit",
+        "category": "usdai_vault_deposit",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "usdai",
+        "reflexLatencyUs": 50.483
+      },
+      {
+        "id": "benign-usdai-peg-stable",
+        "category": "usdai_peg_stable",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "usdai",
+        "reflexLatencyUs": 37.492
+      },
+      {
+        "id": "benign-hyperliquid-rfq-clean",
+        "category": "hyperliquid_rfq_clean",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 17.015
+      },
+      {
+        "id": "benign-hyperliquid-session-key",
+        "category": "hyperliquid_session_key",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "hyperliquid",
+        "reflexLatencyUs": 26.015
+      },
+      {
+        "id": "benign-variational-trade-clean",
+        "category": "variational_trade_clean",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "variational",
+        "reflexLatencyUs": 65.503
+      },
+      {
+        "id": "benign-variational-rfq-normal",
+        "category": "variational_rfq_normal",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "flags=0",
+        "setType": "benign",
+        "venue": "variational",
+        "reflexLatencyUs": 47.493
+      },
+      {
+        "id": "benign-trusted-infinite-approve",
+        "category": "trusted_approve",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "setType": "benign",
+        "venue": "gmx",
+        "reflexLatencyUs": 46.483
+      },
+      {
+        "id": "benign-observatory-emergency-close",
+        "category": "observatory_emergency_close",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "observatoryParadox": true,
+        "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
+        "setType": "benign",
+        "venue": "pendle",
+        "reflexLatencyUs": 30.483
+      },
+      {
+        "id": "benign-observatory-reduce-position",
+        "category": "observatory_reduce",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "observatoryParadox": true,
+        "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
+        "setType": "benign",
+        "venue": "pendle",
+        "reflexLatencyUs": 39.493
+      },
+      {
+        "id": "benign-eip712-allowlisted-permit",
+        "category": "eip712_permit",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "setType": "benign",
+        "venue": "pendle",
+        "reflexLatencyUs": 38.833
+      },
+      {
+        "id": "benign-gmx-healthy-open",
+        "category": "gmx_open_healthy",
+        "expected": "allow",
+        "actual": "allow",
+        "pass": true,
+        "detail": "PASS_GREENLIGHT",
+        "setType": "benign",
+        "venue": "gmx",
+        "reflexLatencyUs": 17.482
+      }
+    ]
+  }
+}

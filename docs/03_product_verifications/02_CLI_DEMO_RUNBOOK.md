@@ -1,0 +1,462 @@
+# SliverVine Protocol (BeΔ) — ExoMesh CLI Demo Guide
+
+> **Read first:** [03_DELIVERABLES_AND_PROOFS.md](./03_DELIVERABLES_AND_PROOFS.md) — finished SKU vs verification demos.  
+> **Judge 60s (live · Module A):** `pnpm demo:exomesh` · `pnpm demo:gmx -- --trip` · `pnpm demo:pendle -- --trip` (+ usdai · hl · variational — README § 5-Core) · `npx vitest run tests/sdk/retail-guard-provider.test.ts`  
+> **Dual Pillar 120s (video · Module A + B):** above + `pnpm demo:sanctuary -- --non-interactive` · `pnpm demo:ingress -- --non-interactive` (full ingress — **not** `--trip`)  
+> **Buildathon Primary (The Shield):** `pnpm demo:exomesh` · `pnpm demo:gmx -- --trip` · `pnpm demo:variational -- --trip` · `pnpm demo:hl -- --trip` · `npx vitest run tests/sdk/retail-guard-provider.test.ts`  
+> **Latency classes:** **~0.5µs–1.1µs** Pure Invariant Math · **p50 ~15µs** Wasm Reflex Core (**<20µs warm path**) · **p50 ~106µs** E2E ExoMesh Edge gate (Worker + TS Gateway + Wasm FFI).  
+> **Venue SSOT:** **5-Core Venue Matrix** — GMX v2 · Pendle · USD.ai · Hyperliquid · Variational.  
+> **Vitest SSOT:** **254 test files | 1206 PASS clean (100%)** on `pnpm test -- --run`.  
+> All standalone demos measure latency via `process.hrtime.bigint()` (µs precision) — no hardcoded timing outputs.
+
+<a id="judge-60s-live-terminal"></a>
+
+---
+
+## Verification Tiers (CLI SSOT)
+
+| Tier | Commands | Scope |
+|------|----------|-------|
+| **Tier 0 — Fully Demo** | `pnpm demo:exomesh` · `pnpm demo:exomesh -- --json` | **Flagship interactive entrypoint** · Scenario A–D (Module A + B) · `@slivervine/exomesh-agentic-wallet-guard` |
+| **FW-11 — Browser UI** | `pnpm demo:FW-11-ui` | Infinite approve intercept · http://127.0.0.1:4173/ · **mock EIP-1193** (not MetaMask) · TS approve gate (same as **35/35**) · optional `pnpm test:e2e` |
+| **Tier 1 — 5-Venue Fast-Track Proofs** | `pnpm demo:{gmx,pendle,usdai,hl,variational} -- --trip` | 0-Gas **FAIL_CLOSED** venue proofs · Wasm `checkSoilResistance()` |
+| **Tier 2 — Specific Standards & Strategy** | `pnpm demo:sanctuary` · `pnpm demo:ingress` · `pnpm demo:delta-neutral` | ERC-7540+ Async Vault · Across/Robinhood AML · Multi-venue delta-neutral hedge · see **Secondary Demo Flags** below |
+| **Tier 3 — Full Regression** | `pnpm test -- --run` · `npx vitest run tests/sdk/retail-guard-provider.test.ts` · `pnpm exec tsc --noEmit` | **254 files / 1206 PASS** · SDK **35/35** · 0 TS errors |
+| **Zone A — Strategy Loops** | `pnpm demo:{perp-loop,spot-loop}` · `--trip` | Loop A perp/yield · Loop B USD.ai collateral |
+| **Zone B — Sandbox** | `pnpm demo:sanctuary` · `pnpm demo:ingress` | Module B vault escort · treasury ingress |
+
+---
+
+<a id="tier-0-exomesh-agentic-guard"></a>
+
+## Tier 0 — ExoMesh Agentic Guard (EIP-1193/5792/6963+)
+
+**Package:** `@slivervine/exomesh-agentic-wallet-guard`  
+**Slogan:** Universal EIP-1193 Pre-Consensus Guard — Tailor-made for Robinhood Chain & Omni-EVM AI Agents
+
+### Dual-Track Verification
+
+| Track | Command | Role |
+|-------|---------|------|
+| **Interactive CLI** | `pnpm demo:exomesh` | Scenario **A–D State Matrix** · `JUDGE_SAFE` deterministic clock · TTY recording pauses |
+| **CI / Dune JSON** | `pnpm demo:exomesh -- --json` | Structured array: `{ scenario, status, wasmUs, code, plainTextWarning }` |
+| **Unit SSOT** | `npx vitest run tests/sdk/retail-guard-provider.test.ts` | **35/35 PASS** · exhaustive **7/7** `RetailGuardReasonCode` coverage |
+
+```bash
+pnpm demo:exomesh                         # Interactive Scenario A–D (JUDGE_SAFE clock)
+pnpm demo:exomesh -- --json               # CI / Dune structured output
+pnpm demo:exomesh -- --trip               # Scenario C–D shortcut only
+pnpm demo:exomesh -- --bench              # Optional full L1–L4 PERF hierarchy (hidden by default)
+npx vitest run tests/sdk/retail-guard-provider.test.ts   # 35/35 PASS · 7/7 reason codes
+```
+
+### Scenario A–D State Matrix (`pnpm demo:exomesh`)
+
+Independent scripted replays — **not** a sequential production lifecycle.
+
+| Scenario | Demo `status` | Behavior |
+|----------|---------------|----------|
+| **A** | `ALLOW_PASSTHROUGH` | Healthy GMX GM deposit · guarded provider forwards to mock RPC |
+| **B** | `DEGRADED_WARN` | **Demo-only monitor preview** — high-slippage warning logged; SDK still allows passthrough |
+| **C** | `FAIL_CLOSED` | Toxic EIP-712 ingress · `RetailGuardRejectedError` · **0-Gas** · no broadcast |
+| **D** | `CHANNEL_SEVERED` | Hot-key circuit breaker · `MAX_ATTEMPTS_EXCEEDED_SEVERED` → `CHANNEL_SEVERED` |
+
+**Clock SSOT:** `Clock: JUDGE_SAFE (Deterministic Audit Epoch) · Network: Arbitrum One 42161` — emitted by [examples/lib/demo-eip-narrative.ts](../../examples/lib/demo-eip-narrative.ts) · [examples/lib/eip1193-extension-helpers.ts](../../examples/lib/eip1193-extension-helpers.ts) · seeded via [examples/lib/demo-harness.ts](../../examples/lib/demo-harness.ts).
+
+**Production alert SSOT:** Interactive output echoes `RetailGuardRejectedError.plainTextWarning` — generated by `formatRetailWarning()` in [src/sdk/exomesh-agentic-wallet-guard/warnings.ts](../../src/sdk/exomesh-agentic-wallet-guard/warnings.ts) (tagged `[PRODUCTION ALERT] (warnings.ts · <CODE>)`). Defense Matrix lines are labeled `(diagnostic preview)` and are **not** production intercept paths for `eth_signTypedData_v4`.
+
+### EIP Extension Narrative HUD (SSOT)
+
+Shared across ExoMesh · Sanctuary · Ingress — [examples/lib/demo-eip-narrative.ts](../../examples/lib/demo-eip-narrative.ts):
+
+| Element | When | Example |
+|---------|------|---------|
+| **Extension banner** | Once per HUD run (after clock; `--non-interactive` included) | `[EXOMESH EXTENSION] 🛡️ 0-Gas pre-consensus guard at EIP-1193+ signing boundary` |
+| **GAP line** | Per scenario header (1 line) | `⚠️ GAP: EIP-1193 provider forwards blindly → 🛡️ ExoMesh: soil + venue verify before Sequencer dispatch` |
+| **Wasm μs** | Inside payload box only | `WASM REFLEX: ⚡ 2.1µs Pure Wasm Core Soil Check` |
+| **V8 Shell** | Below payload box (Scenario A) | `V8 Shell: ~0.3ms (Node.js CLI I/O · not engine latency)` |
+| **EIP MAP footer** | After Scenario D / matrix complete | `[EIP MAP] 📋 1193+6963: this demo · 7540: pnpm demo:sanctuary · …` |
+| **Key Proofs summary** | Once per HUD run (before Scenario A) | Box: `4 Key Proofs` / `3 Key Proofs` · TTY: ENTER to begin Scenario A |
+| **`--bench`** | Optional | Full L1–L4 PERF hierarchy via `isDemoBenchArgv()` — off by default for judge clarity |
+
+**Key Proofs summary boxes** (shown with HUD; `--non-interactive` skips ENTER only):
+
+ExoMesh (`pnpm demo:exomesh`):
+```
+ExoMesh Agentic Guard — 4 Key Proofs
+  Scenario A · ALLOW_PASSTHROUGH (healthy GMX deposit)
+  Scenario B · DEGRADED_WARN (high-slippage monitor preview)
+  Scenario C · FAIL_CLOSED (toxic EIP-712 · 0-Gas)
+  Scenario D · CHANNEL_SEVERED (hot-key throttle)
+```
+
+Ingress (`pnpm demo:ingress`):
+```
+Treasury Ingress — 3 Key Proofs
+  Scenario A · Treasury Bridge Settle — Robinhood → Arbitrum ($2,500 escrow)
+  Scenario B · Route Policy — Direct Robinhood → HL Blocked
+  Scenario C · Route Policy — AML Inbound to Robinhood Blocked
+```
+
+Sanctuary uses the same pattern (`Sanctuary Vault — 4 Key Proofs`) before Scenario A.
+
+### EIP-1193 Terminal HUD Representation
+
+Representative `pnpm demo:exomesh` output (ANSI stripped). Wasm μs bands vary slightly per host; compare runs under `Clock: JUDGE_SAFE (Deterministic Audit Epoch)`.
+
+**Package:** `@slivervine/exomesh-agentic-wallet-guard` · **Slogan:** Universal EIP-1193 Pre-Consensus Guard — Tailor-made for Robinhood Chain & Omni-EVM AI Agents
+
+#### Scenario A — ALLOW_PASSTHROUGH (Healthy Intent)
+
+```text
+Clock: JUDGE_SAFE (Deterministic Audit Epoch) · Network: Arbitrum One 42161
+[EXOMESH EXTENSION] 🛡️ 0-Gas pre-consensus guard at EIP-1193+ signing boundary (blocks toxic signatures BEFORE Sequencer · lostUsd ≡ $0)
+
+Scenario A: 🟢 ALLOW_PASSTHROUGH (Healthy Intent)
+════════════════════════════════════════════════════════════════════════════════════════
+
+⚠️ GAP: EIP-1193 provider forwards blindly  → 🛡️ ExoMesh: soil + venue verify before Sequencer dispatch
+
+[EIP-1193] Ingress Intercept -> window.ethereum.request({ method: 'eth_sendTransaction' })
+[INTENT PAYLOAD] Deposit $2,500.00 USDC into GMX ETH/USDC GM Vault (0xbd65d785Dac74EBa9efFdB357b2dC52fCC26EC7F)
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ PAYLOAD PARSER: ERC-20 Approve / GMX GM Deposit -> 0xbd65d785Dac74EBa9efFdB357b2dC52fCC26EC7F
+│ [EIP-712] DOMAIN: ChainId: 42161 (Arbitrum One) | Verifier: VERIFIED
+│ WASM REFLEX: ⚡ 2.1µs Pure Wasm Core Soil Check -> CLEAN (0-Gas Allowed)
+└────────────────────────────────────────────────────────────────────────────────────────┘
+V8 Shell: ~0.3ms (Node.js CLI I/O · not engine latency)
+  [FORWARD] [EIP-1193] Guarded Provider -> Dispatched to Sequencer RPC
+
+RESULT: 🟢 EIP-1193 PASSTHROUGH ALLOWED (Pre-Consensus Verified Clean)
+```
+
+#### Scenario C — FAIL_CLOSED_INTERCEPT (Pre-Consensus Defense Matrix + 0-Gas Proof)
+
+```text
+Scenario C: 🛑 FAIL_CLOSED_INTERCEPT (Toxic Intent Interception)
+════════════════════════════════════════════════════════════════════════════════════════
+
+⚠️ GAP: EIP-712 has no wallet venue policy  → 🛡️ ExoMesh: pre-consensus structural guard + optional session-scoped venues
+
+[EIP-1193] Ingress Intercept -> window.ethereum.request({ method: 'eth_signTypedData_v4' })
+[INTENT VALUATION] Phishing Cross-Venue Route | Attempted Exposure: $2,500.00 USDC
+
+🔥 [FAIL-CLOSED DEFENSE MATRIX TRIGGERED] (diagnostic preview)
+├── [EIP-712 GUARD] Phishing Attack: VerifyingContract Mismatch! (VENUE_DRIFT_REJECTED) (diagnostic preview)
+├── [PERMIT2 GUARD] Infinite Approve Blocked for Untrusted Spender! (UNAUTHORIZED_SPENDER_REJECTED) (diagnostic preview)
+├── [ERC-7683 GATE] Cross-Chain Solver MEV Bps (10090bps) > Safety Limit! · SLIPPAGE_OVERSHOOT (diagnostic preview)
+└── [PRE-CONSENSUS] 0-Gas Wasm Intercept armed for toxic EIP-712 ingress (diagnostic preview)
+
+[PRODUCTION ALERT] (warnings.ts · VENUE_DRIFT_REJECTED) ALERT: Signature blocked — contract 0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb outside session-scoped venue mandate (0-Gas pre-consensus anti-phishing).
+
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ 🚨 PRE-CONSENSUS FAIL-CLOSED PROOF
+│  ▸ WASM REFLEX TIME : ⚡ 0.6µs Pure Wasm Core (Sub-10ms Wasm Core Execution)
+│  ▸ GAS BURNED       : 0.000000 ETH (0 Bytes Broadcasted to Sequencer)
+│  ▸ CAPITAL PROTECTED: $2,500.00 USDC (lostUsd = $0.00 · 100% Principal Preserved)
+│  ▸ PROVIDER ISOLATED: ExoMesh Agentic Guard aborted at [EIP-1193] signing boundary (0-Gas · before RPC)
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+RESULT: 🛑 FAIL_CLOSED_INTERCEPT (0-Gas Intercepted BEFORE RPC Ingress)
+```
+
+#### Scenario D — CHANNEL_SEVERED (Hot-Key Circuit Breaker)
+
+```text
+Scenario D: 🔒 CHANNEL_SEVERED (Hot-Key Circuit Breaker)
+════════════════════════════════════════════════════════════════════════════════════════
+
+[EIP-1193] Ingress Intercept -> window.ethereum.request({ method: 'eth_sendTransaction' })
+
+[PRODUCTION ALERT] (warnings.ts · MAX_ATTEMPTS_EXCEEDED_SEVERED) ALERT: Too many rapid submit attempts (4) — signing channel severed to prevent panic trading.
+[PRODUCTION ALERT] (warnings.ts · CHANNEL_SEVERED) ALERT: Signing channel is severed — wait before retrying (FOMO throttle active).
+
+[CIRCUIT BREAKER] R17 Hot Key Signature Channel SEVERED — All subsequent signing requests hard-blocked (0-Gas)
+[CHANNEL SEVER] 4th Rapid Attack Attempt -> EIP-712 Signature Channel SEVERED (MAX_ATTEMPTS_EXCEEDED_SEVERED)
+  [CHANNEL STATE] isRetailGuardChannelSevered=true · follow-up=CHANNEL_SEVERED
+
+RESULT: 🔒 CHANNEL_SEVERED (Signature Pipeline Permanently Closed · Gate 0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1)
+
+[EIP MAP] 📋 1193+6963: this demo · 7540: pnpm demo:sanctuary · 7683: pnpm demo:ingress · 5792: pnpm demo:FW-12
+
+RESULT: ✅ ExoMesh Agentic Guard Matrix Complete — Scenarios A–D Replayed (ALLOW · WARN · INTERCEPT · SEVER)
+```
+
+| Module | Path |
+|--------|------|
+| CLI demo | [examples/eip1193-provider-demo.ts](../../examples/eip1193-provider-demo.ts) |
+| Shared narrative SSOT | [examples/lib/demo-eip-narrative.ts](../../examples/lib/demo-eip-narrative.ts) |
+| Demo helpers | [examples/lib/eip1193-extension-helpers.ts](../../examples/lib/eip1193-extension-helpers.ts) |
+| Provider middleware | [src/sdk/exomesh-agentic-wallet-guard/provider.ts](../../src/sdk/exomesh-agentic-wallet-guard/provider.ts) |
+| Alert SSOT | [src/sdk/exomesh-agentic-wallet-guard/warnings.ts](../../src/sdk/exomesh-agentic-wallet-guard/warnings.ts) |
+| Integration blueprint | [docs/02_sdk_and_integrations/01_guides/01_SDK_INTEGRATION_BLUEPRINT.md](../02_sdk_and_integrations/01_guides/01_SDK_INTEGRATION_BLUEPRINT.md) |
+
+Intercepts `eth_sendTransaction` / `eth_signTypedData_v4` / [EIP-5792](https://eips.ethereum.org/EIPS/eip-5792) `wallet_sendCalls` at the browser/SDK layer **before** Sequencer ingress — **0-Gas** on rejection. Generic DEX calldata parsing (router selectors) is intentional Retail Guard behavior, **not** a **RESERVED_ABI_V2** venue lane.
+
+### Unit test reason-code coverage (7/7)
+
+[tests/sdk/retail-guard-provider.test.ts](../../tests/sdk/retail-guard-provider.test.ts) exercises all SDK `RetailGuardReasonCode` variants:
+
+`VENUE_DRIFT_REJECTED` · `UNAUTHORIZED_SPENDER_REJECTED` · `SLIPPAGE_EXCEEDED` · `DEPTH_INSUFFICIENT` · `MAX_ATTEMPTS_EXCEEDED_SEVERED` · `CHANNEL_SEVERED` · `RPC_TRANSPORT_SYNC_FAILED`
+
+---
+
+<a id="tier-1-5-core-venue-matrix"></a>
+
+## Tier 1 — 5-Core Venue Matrix
+
+```bash
+pnpm demo:gmx           # GMX v2 shadow margin · cross-venue slippage · position cap
+pnpm demo:pendle -- --trip  # Pendle Institutional Sentinel · oracle TTL · PT maturity guard
+pnpm demo:usdai         # USD.ai collateral · peg drift · oracle age guard
+pnpm demo:hl            # Hyperliquid session key auth · orderbook depth guard
+pnpm demo:variational   # Variational Omni RFQ stale quote & OLP depth guard
+```
+
+Append `-- --trip` for **FAIL_CLOSED** demonstration (**p50 ~15µs** Wasm `rootProtection()`).
+
+| `--venue` key | Protocol | Chain | HUD invariant (sample) |
+|---------------|----------|-------|------------------------|
+| `gmx` | GMX v2 | Arbitrum One 42161 | OI skew / reserve cap · cross-venue slippage fuse |
+| `pendle` | Pendle | Arbitrum One 42161 | Oracle TTL > 60s · Yield jitter > 200 bps · PT maturity < 7d |
+| `usdai` / `usd` | USD.ai | Arbitrum One 42161 | Peg drift ≤ 30 bps · oracle age ≤ 2h |
+| `hyperliquid` / `hl` | Hyperliquid | Hyperliquid L1 Perps | Spread ≤ 20 bps · session-key rate cap |
+| `variational` / `var` | Variational Omni RFQ | Arbitrum One 42161 | Quote stale ≤ 500ms · OLP ≤ 15% |
+
+Implementation SSOT: [docs/03_product_verifications/02_CLI_DEMO_RUNBOOK.md](../../docs/03_product_verifications/02_CLI_DEMO_RUNBOOK.md) · `pnpm demo:{gmx,pendle,usdai,variational,hl}`
+
+**RESERVED_ABI_V2 (v1.1):** **RESERVED_ABI_V2 Wasm bitmask holes (protocol bits 4–6)** — frozen ABI v2 slots without active venue evaluators. See [docs/01_architecture_and_standards/01_core_specs/02_DEFENSE_MATRIX_AND_SSRC_CORE.md](../01_architecture_and_standards/01_core_specs/02_DEFENSE_MATRIX_AND_SSRC_CORE.md).
+
+### Judge copy-paste commands
+
+```bash
+pnpm demo:gmx -- --trip
+pnpm demo:pendle -- --trip
+pnpm demo:variational -- --trip
+pnpm demo:hl -- --trip
+```
+
+**Expected HUD signals:**
+- `pnpm demo:gmx -- --trip` → `GMX_FAIL_CLOSED` · pool skew / price-impact breach · `⚡ Reflex Core Deadlock`
+- `pnpm demo:variational -- --trip` → `VARIATIONAL_FAIL_CLOSED` · stale quote / OLP breach · `⚡ Reflex Core Deadlock`
+- `pnpm demo:hl -- --trip` → `HL_FAIL_CLOSED` · session-key / depth guard · `⚡ Reflex Core Deadlock`
+
+### Tier 1b — Funding preflight (Wallet×Token wedge)
+
+**Separate from `--trip` guard demos.** Validates wallet role × token × gas **before** live `execute:*` scripts. SSOT: [venue-execution-matrix.ts](../../src/core/venue-execution-matrix.ts).
+
+```bash
+pnpm preflight:venues                    # all 8 matrix rows
+pnpm preflight:venues --venue=pendle      # single venue
+pnpm preflight:venues --venue=hyperliquid
+```
+
+| Venue | Probe | Human fail example | Live harness |
+|-------|-------|-------------------|--------------|
+| `gmx` | USDC + ETH on Wallet A/B | Wallet B cannot sign perp | `pnpm execute:gmx:micro-fill` |
+| `pendle` | USDai + ETH (not USDC) | `WRONG_TOKEN_USDC_FOR_PENDLE` | `pnpm execute:pendle:dust` · `pnpm execute:pendle:dust-exit` |
+| `hyperliquid` | HL perps margin | `HL_MARGIN_SHORTFALL` | `pnpm execute:hl:micro-hedge` |
+| `usdai` | ETH gas only (BH-25) | `ETH_GAS_ONLY_BH25` | `pnpm execute:usdai:collateral-probe` |
+| `variational` | intent-only (off-chain RFQ) | — | `pnpm demo:variational -- --trip` for soil |
+
+**Pendle live round-trip (execution harness · verified 2026-09-18):**
+
+```bash
+CONFIRM_PENDLE_DUST=YES BROADCAST=1 pnpm execute:pendle:dust --amount-usd=1
+CONFIRM_PENDLE_DUST_EXIT=YES BROADCAST=1 pnpm execute:pendle:dust-exit --redeem-all
+```
+
+| Leg | Tx | Note |
+|-----|-----|------|
+| Deposit ($1 USDai→PT-sUSDai) | [0x22d7c939…82b4](https://arbiscan.io/tx/0x22d7c93994ae930d95c159ee9087c7c49e3462d95a41ddd17b70c94877cd82b4) | execution harness |
+| Redeem (PT→**sUSDai**) | [0x9cfbeff8…67e1](https://arbiscan.io/tx/0x9cfbeff8a08472ed4f14e659b940c3b56f0c9e0dc23bc1c42e61cc0521a867e1) | redeem outputs sUSDai, not USDai |
+
+> **Risk honesty:** `execute:pendle:dust*` = market selector + funding preflight only — **not** on-chain soil enforcement. Institutional Sentinel FAIL_CLOSED proof: `pnpm demo:pendle -- --trip`.
+
+**PASS output:** `[preflight] ALL CLEAR · N/N rows PASS` with per-row balances. **Do not** claim funding preflight answers Daniel guardrail Q&A — preflight checks balances only, not agentic policy semantics.
+
+---
+
+## Zone A — Strategy Loop Guards (Loop A / Loop B)
+
+```bash
+pnpm demo:perp-loop                              # Loop A: GMX / Pendle / HL / Variational
+pnpm demo:perp-loop -- --trip                    # Loop A FAIL_CLOSED · p50 ~15µs rootProtection()
+pnpm demo:perp-loop -- --hedge=variational       # Variational Omni RFQ hedge leg only
+pnpm demo:perp-loop -- --hedge=hyperliquid       # Hyperliquid L1 hedge leg only
+pnpm demo:spot-loop                              # Loop B: USD.ai collateral lane
+pnpm demo:spot-loop -- --trip                    # Loop B FAIL_CLOSED · p50 ~15µs rootProtection()
+pnpm demo:perp-loop -- --healthy-only            # Nominal PASS (no R20 sever)
+```
+
+| Loop | Venues | Role |
+|------|--------|------|
+| **Loop A (perp-loop)** | GMX · Pendle · HL · Variational | Perp/yield stack pre-broadcast guards |
+| **Loop B (spot-loop)** | USD.ai | Collateral / peg lane pre-broadcast guards |
+
+---
+
+## Dual-Venue Short Architecture: GMX Backup & Variational Matrix
+
+SliverVine ExoMesh uses a **three-tier venue stack** for perp short / hedge coverage.
+
+| Tier | Venue | Chain | Role |
+|------|-------|-------|------|
+| **Primary** | Hyperliquid L1 | Off-Arbitrum L1 | High-speed perp shorting via **EIP-712 session keys** (`Wallet A`) |
+| **Hard Anchor** | **GMX V2** | Arbitrum One `42161` | Arbitrum-native fallback when HL is unreachable — **0-Gas pre-consensus** |
+| **RFQ Expansion** | **Variational** | Arbitrum One `42161` | Protocol-agnostic RFQ firewall · `allowedVenues[]` → **`VENUE_DRIFT_REJECTED`** |
+
+Live GM I/O proofs: deposit [0xe3155220…](https://arbiscan.io/tx/0xe3155220e464c375329838bb5ca8498226b8c8fa32c11929b7605070f7be4774) · withdraw [0xfd3601dc…](https://arbiscan.io/tx/0xfd3601dce5c2407d371186d8a24829994547ec8810f4a20c3e798d2fb67ae410).
+
+---
+
+## Pillar Set X vs Pillar Set Y — Command Boundary
+
+| Pillar | CLI entry | Scope | What `--unwind` means here |
+|--------|-----------|-------|----------------------------|
+| **Pillar Set X** | `pnpm demo:delta-neutral` | Sanctuary **capital lifecycle** — Robinhood escort → GMX GM deposit → HL delta-neutral hedge | **`pnpm demo:delta-neutral -- --unwind`** appends Step 5 R20 Emergency Unwind (`RESULT: E2E OK (5/5)`) |
+| **Pillar Set Y** | `pnpm demo:spot-loop` · `pnpm demo:perp-loop` | **Pre-consensus intent guards** — zero-gas FAIL_CLOSED *before* broadcast | **No `--unwind` flag.** Use `--trip` for reflex-core deadlock. |
+
+---
+
+## Multi-Wallet Cross-Venue Architecture (Wallet A × Wallet B)
+
+| Lane | Wallet | Venue | What it does |
+|------|--------|-------|--------------|
+| **Wallet A — Hyperliquid Short Lane** | Default `0xef0752…960d` | Hyperliquid L1 Perps | Perp margin · EIP-712 session keys · 1× short hedge IOC |
+| **Wallet B — Arbitrum Vault / GMX GM Lane** | Default `0xc9Bdd…546f` | Arbitrum One | **$2,500** user vault · **$2,400** GMX GM deposit · **$100** HL margin gateway |
+
+```bash
+pnpm demo:delta-neutral                     # Pillar Set X — 4-Step Happy Path (`--zerodev=on` default)
+pnpm demo:delta-neutral -- --zerodev=off    # Native EIP-1193 signer (AA opt-out)
+pnpm demo:delta-neutral -- --json           # Pure JSON export (includes zerodev AA state)
+pnpm demo:delta-neutral -- --unwind         # Pillar Set X — 5-Step Emergency Capital Unwind
+pnpm demo:delta-neutral -- --trip           # Pillar Set X — Step 1 soil-trip fail-closed intercept
+pnpm demo:perp-loop -- --trip     # Pillar Set Y — Loop A reflex demo
+pnpm demo:spot-loop -- --trip     # Pillar Set Y — Loop B reflex demo
+```
+
+---
+
+<a id="zone-b-sandbox-e2e"></a>
+
+## Zone B — Sandbox & E2E
+
+```bash
+pnpm demo:sanctuary               # Module B Vault Standard — ERC-7540+ Scenario A–C (interactive ENTER pauses · `--json`)
+pnpm demo:ingress                 # Module B Treasury Ingress — Scenario A–C box HUD (interactive ENTER pauses · `--json`)
+pnpm demo:delta-neutral                     # 4-Step Happy Path Lifecycle (`--zerodev=on` default · `--json`)
+pnpm demo:delta-neutral -- --zerodev=off    # Native EIP-1193 signer (AA disabled)
+pnpm demo:delta-neutral -- --unwind         # 5-Step Emergency Capital Unwind (RESULT: E2E OK 5/5)
+pnpm demo:delta-neutral -- --trip           # Step 1 Gatehouse soil-trip intercept (FAIL_CLOSED abort)
+```
+
+### Zone B — Sanctuary / Ingress HUD (shared narrative)
+
+Same Extension · GAP · EIP MAP pattern as ExoMesh — SSOT: [demo-eip-narrative.ts](../../examples/lib/demo-eip-narrative.ts).
+
+**Sanctuary (`pnpm demo:sanctuary`) — Scenario A sample:**
+
+```text
+Clock: JUDGE_SAFE (Deterministic Audit Epoch) · Network: Arbitrum One 42161
+[SANCTUARY EXTENSION] 🛡️ 0-Gas async vault escort at ERC-7540+ signing boundary (Pending→Claimable drift fuse · operator whitelist · lostUsd ≡ $0)
+
+Scenario A: Valid Whitelisted Escort
+⚠️ GAP: ERC-7540 no pre-sign drift guard  → 🛡️ Sanctuary: Wasm escort on requestDeposit · drift fuse ≤50 bps
+┌─ ... ERC-7540 ASYNC VAULT box HUD ... ─┐
+[EIP MAP] 📋 1193+6963: pnpm demo:exomesh · 7540: this demo · 7683: pnpm demo:ingress · 5792: pnpm demo:FW-12
+```
+
+**Ingress (`pnpm demo:ingress`) — Scenario samples:**
+
+```text
+Scenario A: Treasury Bridge Settle — Robinhood → Arbitrum
+Bridge escrow only · GMX/Pendle = next demo (pnpm demo:gmx / demo:pendle)
+⚠️ GAP: ERC-7683 in-flight capital unlocked  → 🛡️ Ingress: IN_FLIGHT→SETTLED bridge escort · lostUsd ≡ $0 · venue deposit not in this step
+│ Capital        $2,500.00 USD escrow (demo constant · not on-chain tx)
+│ IN_FLIGHT      $2,500.00 locked during bridge · IN_FLIGHT_BRIDGE_CAPITAL
+│ SETTLED        $2,500.00 deployable NAV on Arb · next: GMX/Pendle pre-flight
+
+Scenario B: Route Policy — Direct Robinhood → HL Blocked
+Topology check only · no HL order · required: RH → Arb SETTLED → HL session hedge
+│ Scope          Route policy only · no capital transfer simulated
+
+Scenario C: Route Policy — AML Inbound to Robinhood Blocked
+  Policy check only · Arb→Base unsupported · Arb→Robinhood inbound FAIL_CLOSED
+
+> **Live-fire vs policy replay:** `pnpm demo:ingress` replays Route A/C policy scenarios only — **not** on-chain live-fire proof. For **46630/4663 live-fire baseline** (Tier1/Tier2/Tier2-mainnet txs + B1/B2/B3 JSON), see [ROBINHOOD_LIVEFIRE_ARTIFACTS.md](../logging/ROBINHOOD_LIVEFIRE_ARTIFACTS.md) · harnesses: `pnpm tsx scripts/execute-smart-route-live-demo.ts` · `pnpm probe:rchain-testnet` · `pnpm probe:rchain-mainnet` · `pnpm probe:robinhood-inbound-treasury`
+│ Scope          Route policy only · no capital transfer simulated
+
+[EIP MAP] 📋 1193+6963: pnpm demo:exomesh · 7540: pnpm demo:sanctuary · 7683: this demo · 5792: pnpm demo:FW-12
+```
+
+---
+
+## Secondary Demo Flags (Tier 2 Module B)
+
+| Demo | Flag | Behavior |
+|------|------|----------|
+| `pnpm demo:sanctuary` | `--json` | Pure JSON stdout · persists `docs/logging/last_sanctuary_run.json` |
+| `pnpm demo:sanctuary` | *(default interactive)* | ENTER pauses between Scenario A → B → C |
+| `pnpm demo:sanctuary` | `--non-interactive` | Skip ENTER pauses |
+| `pnpm demo:ingress` | `--json` | Pure scenarios JSON array stdout · persists `docs/logging/last_ingress_run.json` |
+| `pnpm demo:ingress` | *(default interactive)* | ENTER pauses between Scenario A → B → C |
+| `pnpm demo:delta-neutral` | `--zerodev=on` *(default)* | ZeroDev Kernel v3 + ERC-7715 Session Mandates + ERC-7710 Paymaster 0-Gas; graceful native EIP-1193 fallback on RPC/paymaster failure |
+| `pnpm demo:delta-neutral` | `--zerodev=off` | Native EIP-1193 signer only · logs `[AA STATE] ZeroDev Account Abstraction Disabled` |
+| `pnpm demo:delta-neutral` | `--json` | Pure JSON payload stdout (includes `zerodev` state) · persists `docs/logging/last_delta_neutral_run.json` |
+| `pnpm demo:delta-neutral` | *(HUD badge)* | Banner line: `Account Abstraction: 🟢 ZeroDev Kernel v3 Ready · ERC-7715 Mandates Active` |
+| `pnpm demo:{gmx,hl,pendle,usdai,variational}` | *(preflight)* | `[AA] 🟢 ZeroDev AA Ready` badge in venue pre-flight header |
+
+---
+
+## Quick Verification Reference
+
+```bash
+pnpm install
+
+# Tier 0 — Fully Demo (Flagship · Module A + B · Scenario A–D)
+pnpm demo:exomesh                 # EIP-1193+ Agentic Guard · interactive Scenario A–D matrix
+pnpm demo:exomesh -- --json       # CI / Dune structured output
+
+# Tier 1 — 5-Venue Fast-Track Proofs (0-Gas FAIL_CLOSED)
+pnpm demo:gmx -- --trip           # GMX v2 FAIL_CLOSED proof
+pnpm demo:pendle -- --trip        # Pendle Institutional Sentinel FAIL_CLOSED proof
+pnpm demo:usdai -- --trip         # USD.ai Collateral FAIL_CLOSED proof
+pnpm demo:hl -- --trip            # Hyperliquid Session Guard FAIL_CLOSED proof
+pnpm demo:variational -- --trip   # Variational RFQ FAIL_CLOSED proof
+
+# Tier 2 — Specific Standards & Strategy Use Cases
+pnpm demo:sanctuary               # Module B · ERC-7540+ Async Vault Escort (`--json` · interactive pauses)
+pnpm demo:ingress                 # Module B · Across/Robinhood AML Compliance Ingress (`--json` · Scenario A–C)
+pnpm demo:delta-neutral           # Multi-venue delta-neutral hedge lifecycle (`--zerodev=on` · `--json`)
+pnpm demo:delta-neutral -- --zerodev=off  # Native EIP-1193 signer
+
+# Unit Verification & Full Test Suite
+npx vitest run tests/sdk/retail-guard-provider.test.ts  # 35/35
+pnpm test -- --run                                       # 254 files | 1206 PASS
+```
+
+Optional benchmark: `npx tsx scripts/grant-advanced-resilience-benchmark.ts`
+
+→ Full verification matrix: [VERIFICATION_MATRIX.md](./01_VERIFICATION_MATRIX.md)
+
+---
+
+## Optional Appendix — B2B Agent Integration (not HackQuest judge path)
+
+> **Not judge-primary.** HackQuest demo video uses [Judge 60s](#judge-60s-live-terminal) / Dual Pillar 120s paths only. This section is for server-side integrators.
+
+Framework-agnostic B2B execution hook — same `checkSoilResistance()` · not the wallet wrap:
+
+```typescript
+import { withExoMeshShield } from "@slivervine/exomesh-agentic-wallet-guard";
+
+const execute = withExoMeshShield(async (intent) => agent.swap(intent));
+```
+
+```bash
+pnpm demo:agent    # agent lifecycle smoke demo (soil gate · optional)
+npx vitest run tests/sdk/decorator.test.ts
+```
+
+SSOT: [src/sdk/decorator.ts](../../src/sdk/decorator.ts) · [examples/agent-interceptor-demo.ts](../../examples/agent-interceptor-demo.ts)

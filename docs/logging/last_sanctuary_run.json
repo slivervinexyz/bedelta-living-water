@@ -1,0 +1,35 @@
+{
+  "event": "SANCTUARY_ASYNC_ESCORT_DEMO",
+  "timestamp": "2026-09-23T08:19:14.365Z",
+  "benchmark": {
+    "pureInvariantUs": 0.892,
+    "fullMatrixUs": 16.488000000000003,
+    "e2eHarnessUs": 47.846
+  },
+  "scenarios": [
+    {
+      "scenario": "A",
+      "status": "ALLOW_DEPOSIT",
+      "wasmUs": 6.3,
+      "code": null,
+      "driftBps": 2,
+      "selector": "requestDeposit(0xb2d9f201)"
+    },
+    {
+      "scenario": "B",
+      "status": "REJECT_OPERATOR",
+      "wasmUs": 59.4,
+      "code": "ERC7540_OPERATOR_REJECTED",
+      "operator": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "selector": "setOperator(0x9cc233d6)"
+    },
+    {
+      "scenario": "C",
+      "status": "REJECT_SLIPPAGE",
+      "wasmUs": 7.3,
+      "code": "ERC7540_ASYNC_SLIPPAGE_DRIFT",
+      "driftBps": 2000,
+      "selector": "requestDeposit(0xb2d9f201)"
+    }
+  ]
+}

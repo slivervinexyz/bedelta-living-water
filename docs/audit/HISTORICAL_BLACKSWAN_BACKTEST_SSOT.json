@@ -1,0 +1,226 @@
+{
+  "schema": "silvervine.historical-blackswan-backtest.ssot.v1",
+  "protocol": "SliverVine Protocol",
+  "harness": "historical-blackswan-backtest",
+  "timestamp": "2026-09-14T13:33:31.430Z",
+  "chainId": 42161,
+  "gitCommitHash": "247ad8856e96462983ba54a8d34c29ae00ab9316",
+  "wasm": {
+    "soil": true,
+    "sanctuary": true
+  },
+  "tier1_macro_events": {
+    "2025-08-05_black_monday_volatility_strike": {
+      "scenarioId": "A",
+      "eventDate": "2025-08-05",
+      "description": "GMX GM high slippage cascade & orderbook thinning",
+      "withoutExoMesh": {
+        "executed": true,
+        "failClosed": false,
+        "slippageLossUsd": 900,
+        "toxicFlowExposureUsd": 185,
+        "gasWastedUsd": 1.25,
+        "lossPreventedUsd": 0,
+        "gasSavedUsd": 0,
+        "latencyUs": 0,
+        "interceptReasons": []
+      },
+      "withSliverVine": {
+        "executed": false,
+        "failClosed": true,
+        "slippageLossUsd": 0,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0,
+        "lossPreventedUsd": 1086.25,
+        "gasSavedUsd": 1.25,
+        "latencyUs": 295.885,
+        "interceptReasons": [
+          "SOIL_CORE_WASM_FAIL_CLOSED",
+          "SANCTUARY_INVARIANTS_WASM"
+        ]
+      },
+      "delta": {
+        "slippageLossPreventedUsd": 900,
+        "toxicFlowPreventedUsd": 185,
+        "gasSavedUsd": 1.25,
+        "interceptDelta": true
+      }
+    },
+    "2025-11-12_oracle_latency_lag": {
+      "scenarioId": "B",
+      "eventDate": "2025-11-12",
+      "description": "Arbitrum sequencer congestion & delayed oracle price feeds",
+      "withoutExoMesh": {
+        "executed": true,
+        "failClosed": false,
+        "slippageLossUsd": 100,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0.35,
+        "lossPreventedUsd": 0,
+        "gasSavedUsd": 0,
+        "latencyUs": 0,
+        "interceptReasons": []
+      },
+      "withSliverVine": {
+        "executed": false,
+        "failClosed": true,
+        "slippageLossUsd": 0,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0,
+        "lossPreventedUsd": 100.35,
+        "gasSavedUsd": 0.35,
+        "latencyUs": 9.941,
+        "interceptReasons": [
+          "SOIL_CORE_WASM_FAIL_CLOSED",
+          "ORACLE_LAG_DEADLOCK:45000ms>30000ms"
+        ]
+      },
+      "delta": {
+        "slippageLossPreventedUsd": 100,
+        "toxicFlowPreventedUsd": 0,
+        "gasSavedUsd": 0.35,
+        "interceptDelta": true
+      }
+    },
+    "2026-03-18_liquidity_depeg": {
+      "scenarioId": "C",
+      "eventDate": "2026-03-18",
+      "description": "Pendle PT escort rate drift & async vault divergence",
+      "withoutExoMesh": {
+        "executed": true,
+        "failClosed": false,
+        "slippageLossUsd": 400,
+        "toxicFlowExposureUsd": 125,
+        "gasWastedUsd": 0.35,
+        "lossPreventedUsd": 0,
+        "gasSavedUsd": 0,
+        "latencyUs": 0,
+        "interceptReasons": []
+      },
+      "withSliverVine": {
+        "executed": false,
+        "failClosed": true,
+        "slippageLossUsd": 0,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0,
+        "lossPreventedUsd": 525.35,
+        "gasSavedUsd": 0.35,
+        "latencyUs": 5.929,
+        "interceptReasons": [
+          "SOIL_CORE_WASM_FAIL_CLOSED",
+          "SANCTUARY_ASYNC_VAULT_DRIFT"
+        ]
+      },
+      "delta": {
+        "slippageLossPreventedUsd": 400,
+        "toxicFlowPreventedUsd": 125,
+        "gasSavedUsd": 0.35,
+        "interceptDelta": true
+      }
+    }
+  },
+  "tier2_adversarial": {
+    "jitter_scraper_mev_sandwich": {
+      "scenarioId": "JitterScraper",
+      "eventDate": "synthetic",
+      "description": "Searcher bot front-running AI agent intents under volatile spread",
+      "withoutExoMesh": {
+        "executed": true,
+        "failClosed": false,
+        "slippageLossUsd": 25.500000000000004,
+        "toxicFlowExposureUsd": 32.5,
+        "gasWastedUsd": 0.35,
+        "lossPreventedUsd": 0,
+        "gasSavedUsd": 0,
+        "latencyUs": 0,
+        "interceptReasons": []
+      },
+      "withSliverVine": {
+        "executed": false,
+        "failClosed": true,
+        "slippageLossUsd": 0,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0,
+        "lossPreventedUsd": 58.35,
+        "gasSavedUsd": 0.35,
+        "latencyUs": 9.495,
+        "interceptReasons": [
+          "SOIL_CORE_WASM_FAIL_CLOSED"
+        ]
+      },
+      "delta": {
+        "slippageLossPreventedUsd": 25.500000000000004,
+        "toxicFlowPreventedUsd": 32.5,
+        "gasSavedUsd": 0.35,
+        "interceptDelta": true
+      }
+    },
+    "honeypot_decoy_rpc_infiltration": {
+      "scenarioId": "HoneypotRpc",
+      "eventDate": "synthetic",
+      "description": "Malicious/spoofed RPC depth injection attempting agent signature trick",
+      "withoutExoMesh": {
+        "executed": true,
+        "failClosed": false,
+        "slippageLossUsd": 5,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0.35,
+        "lossPreventedUsd": 0,
+        "gasSavedUsd": 0,
+        "latencyUs": 0,
+        "interceptReasons": []
+      },
+      "withSliverVine": {
+        "executed": false,
+        "failClosed": true,
+        "slippageLossUsd": 0,
+        "toxicFlowExposureUsd": 0,
+        "gasWastedUsd": 0,
+        "lossPreventedUsd": 4950.35,
+        "gasSavedUsd": 0.35,
+        "latencyUs": 64.482,
+        "interceptReasons": [
+          "HONEYPOT_ACTIVE"
+        ]
+      },
+      "delta": {
+        "slippageLossPreventedUsd": 5,
+        "toxicFlowPreventedUsd": 0,
+        "gasSavedUsd": 0.35,
+        "interceptDelta": true
+      }
+    }
+  },
+  "tier3_monte_carlo": {
+    "iterations": 10000,
+    "seed": 42,
+    "interceptRatePct": 100,
+    "interceptCount": 10000,
+    "baselineTotalLossUsd": 1319692.14,
+    "totalLossPreventedUsd": 1319692.14,
+    "totalGasSavedUsd": 3500,
+    "latencyP50Us": 0.43,
+    "latencyP99Us": 1.95,
+    "wasmRuntimeReady": true
+  },
+  "comparative_radar_matrix": {
+    "withoutExoMesh": {
+      "totalSlippageLossUsd": 859230.39,
+      "totalToxicFlowUsd": 330265.53,
+      "totalGasWastedUsd": 3502.65,
+      "aggregateLossUsd": 1321467.79,
+      "interceptRatePct": 0
+    },
+    "withSliverVine": {
+      "totalSlippageLossUsd": 0,
+      "totalToxicFlowUsd": 0,
+      "totalGasWastedUsd": 0,
+      "aggregateLossUsd": 0,
+      "interceptRatePct": 100,
+      "totalLossPreventedUsd": 1326412.79,
+      "totalGasSavedUsd": 3502.65,
+      "reflexLatencyP50Us": 0.43,
+      "reflexLatencyP99Us": 1.95
+    }
+  }
+}

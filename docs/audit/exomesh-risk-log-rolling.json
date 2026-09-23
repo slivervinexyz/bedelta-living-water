@@ -1,0 +1,1161 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-09-23T08:23:08.453Z",
+  "entries": [
+    {
+      "at": "2026-09-15T06:00:54.794Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:10:26.583Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:12:16.162Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:23:29.146Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:23:49.631Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:26:59.136Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T06:27:44.333Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T06:28:29.672Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-15T07:01:59.760Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:38:57.367Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:39:46.167Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:46:03.860Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:48:51.992Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:49:42.216Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:51:32.080Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:54:24.259Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:55:29.750Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:55:59.986Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T07:59:05.351Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:04:35.900Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:05:17.798Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:05:19.464Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:05:26.452Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:05:43.326Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:15:35.030Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:20:22.263Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:21:13.462Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:28:07.422Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:28:08.108Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:28:12.868Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:28:13.490Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:32:05.232Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:32:21.459Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:32:45.225Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-15T08:33:03.719Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:36:18.232Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "COMPLIANCE_ESCORT_SETTLED"
+    },
+    {
+      "at": "2026-09-15T08:36:24.032Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:37:23.471Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:37:29.144Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:41:27.329Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:41:27.330Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "INGRESS_MATRIX_VERIFIED"
+    },
+    {
+      "at": "2026-09-15T08:42:05.525Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:42:36.179Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:45:01.372Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "INGRESS_MATRIX_VERIFIED"
+    },
+    {
+      "at": "2026-09-15T08:45:03.166Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:45:51.643Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:52:08.691Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:52:14.000Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-15T08:56:09.042Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-16T03:52:25.954Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-16T03:57:27.555Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-16T04:06:21.753Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-16T04:24:19.870Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-16T04:58:18.018Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-16T07:19:56.007Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-17T14:46:45.936Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-17T14:47:14.943Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-18T08:01:52.155Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-18T15:58:05.917Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-18T15:59:09.267Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-18T15:59:35.147Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-19T15:52:08.649Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-19T15:54:44.503Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T05:06:04.544Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T05:06:08.358Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T11:26:18.139Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T11:34:35.579Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T11:35:02.730Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T11:43:43.613Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "BRIDGE_TIMEOUT_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-20T11:44:20.529Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "BRIDGE_TIMEOUT_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-20T11:54:21.746Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T11:54:48.210Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "BRIDGE_TIMEOUT_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-20T12:32:30.456Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:32:57.608Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:34:14.034Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:36:36.379Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:42:32.988Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:42:40.976Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:42:57.500Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:48:46.174Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:49:01.448Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:49:25.617Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:49:30.870Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:50:20.469Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:54:19.968Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:54:41.583Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:57:15.605Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:57:39.379Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T12:58:57.462Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:06:06.805Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:06:09.532Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:09:02.712Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:10:27.740Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:15:49.624Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:16:53.856Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:17:58.001Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:22:08.276Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:22:10.382Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:23:06.389Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:27:07.533Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:31:25.822Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:31:27.973Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:31:31.155Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:32:42.880Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:33:49.189Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:37:00.272Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T13:56:42.161Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:56:44.735Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:56:52.017Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:56:54.660Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T13:58:38.773Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:01:09.102Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:04:28.812Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:27:39.661Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:28:36.370Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:30:16.798Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:37:16.467Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:37:19.141Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:37:21.924Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:39:06.562Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:49:49.013Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:51:51.224Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:53:15.288Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:53:57.380Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-20T14:54:27.331Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-20T14:55:03.482Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-21T00:55:52.946Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T02:24:50.922Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-21T02:27:10.948Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T02:36:01.091Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-21T02:36:01.342Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T02:36:08.010Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-21T02:36:09.300Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T02:50:18.469Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T02:50:38.868Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T07:33:29.431Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-21T07:57:49.219Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:01:59.469Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T08:02:32.403Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:06:08.811Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T08:06:15.355Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:06:16.586Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-21T08:06:21.592Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:09:12.575Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "CROSS_VENUE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:09:42.270Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:09:43.269Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:16:21.470Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:16:31.286Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-21T08:22:58.209Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "PENDLE_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-22T01:34:57.036Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-22T01:34:58.657Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-22T01:35:03.085Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T01:35:04.369Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T01:35:13.599Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-22T01:35:17.841Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-22T01:35:19.179Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-22T01:35:23.129Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T01:35:24.402Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T01:35:29.073Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "VENUE_DRIFT_REJECTED"
+    },
+    {
+      "at": "2026-09-22T01:35:30.352Z",
+      "level": "warn",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "GMX_FAIL_CLOSED"
+    },
+    {
+      "at": "2026-09-22T01:35:33.946Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T01:35:35.189Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-22T07:07:02.243Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-23T08:19:14.424Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    },
+    {
+      "at": "2026-09-23T08:23:08.453Z",
+      "level": "info",
+      "module": "exomesh-demo",
+      "event": "SOIL_RESISTANCE_TRIP",
+      "message": "ALLOW_PASSTHROUGH"
+    }
+  ]
+}
