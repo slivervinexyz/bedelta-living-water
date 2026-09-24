@@ -16,7 +16,7 @@
 <!-- SSOT:README_BADGES_END -->
 
 <p align="center">
-  <img src="./public/brand/Detox_Sanctuary_wm.png" alt="SliverVine ExoMesh — Detox Sanctuary" width="600" />
+  <img src="./public/brand/Detox_Sanctuary_wm.jpg" alt="SliverVine ExoMesh — Detox Sanctuary" width="600" />
 </p>
 
 **SliverVine Protocol · v1.0 · BeDelta Living Water v1.0 (BeΔ)** · SilverVine Labs · **SSRC:** Slivervine Stylus ReflexCore  
