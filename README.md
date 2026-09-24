@@ -15,7 +15,9 @@
 [![ZeroDev AA Ready](https://img.shields.io/badge/ZeroDev_AA-Kernel_v3_Ready-00D26A.svg)](https://zerodev.app)
 <!-- SSOT:README_BADGES_END -->
 
-![SliverVine ExoMesh — Detox Sanctuary](public/brand/Detox_Sanctuary_wm.webp)
+<p align="center">
+  <img src="./public/brand/Detox_Sanctuary_wm.png" alt="SliverVine ExoMesh — Detox Sanctuary" width="600" />
+</p>
 
 **SliverVine Protocol · v1.0 · BeDelta Living Water v1.0 (BeΔ)** · SilverVine Labs · **SSRC:** Slivervine Stylus ReflexCore  
 **DApp:** [slivervine.xyz](https://slivervine.xyz) · **Corporate:** [silvervinelabs.com](https://silvervinelabs.com) · **Telemetry (supplementary):** [Dune Operational Shield](https://dune.com/silvervinelabs/slivervine-protocol) · [Dune SEPSB](https://dune.com/silvervinelabs/slivervine-sepsb-stress) · verify `pnpm docs:dune-reconcile`
