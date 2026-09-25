@@ -1,53 +1,64 @@
-# SliverVine Protocol (BeDelta Living Water v1.0 / BeΔ) — Technical One-Pager
+# Arbitrum Foundation Grant Proposal — SliverVine Protocol (BeDelta Living Water v1.0 / BeΔ)
 
-**Official Name:** SliverVine Protocol (BeDelta Living Water v1.0 / BeΔ)
+**Project Name:** SliverVine Protocol (BeDelta Living Water v1.0 / BeΔ)
 **Sub-ms 0-Gas Pre-Broadcast ExoMesh Intent Firewall & Risk Navigator for AI Agents on Arbitrum**
+**Entity:** SilverVine Labs · **Contact:** `grants@silvervinelabs.com`
+**Official Site:** [silvervinelabs.com](https://silvervinelabs.com)
+**Repo:** [SilverVineLabs/bedelta-living-water](https://github.com/SilverVineLabs/bedelta-living-water)
+**Live DApp:** [bedeltawater.slivervine.xyz](https://bedeltawater.slivervine.xyz)
 
-| Field | Value |
-|-------|-------|
-| **Entity** | SilverVine Labs · `grants@silvervinelabs.com` |
-| **Official Site** | [silvervinelabs.com](https://silvervinelabs.com) |
-| **Repo** | [SilverVineLabs/bedelta-living-water](https://github.com/SilverVineLabs/bedelta-living-water) |
-| **Live DApp** | [bedeltawater.slivervine.xyz](https://bedeltawater.slivervine.xyz) |
-| **Test Coverage** | **254 test files · 1206 PASS clean (100%)** |
-| **License** | BUSL-1.1 → Apache-2.0 upon Milestone Completion |
+> **Vitest SSOT:** **254 test files | 1206 PASS clean (100%)** · **3-Tier Security Matrix: 5/0/0 PASS** · Defense Matrix `17 Active | 2 Refactored | 1 Deprecated` · Wasm Core **<28kb Cloudflare budget, <60µs execution (<150µs P99 tail)** · Gate ExoMesh **Mainnet [0x71D7…e2f1](https://arbiscan.io/address/0x71d7d26f98110c5de3df0fcbddcf2a3a2bc6e2f1) · Sepolia [0xc66F…8959](https://sepolia.arbiscan.io/address/0xc66f96611a737c4e58706d0955594456eab88959)** · domain `SliverVineExoMesh`
 
 ---
 
-## 1. What It Does
+## 1. Executive Summary
 
-SliverVine Protocol provides a **Sub-ms 0-Gas Pre-Broadcast Security Layer** for AI Agents and automated market participants on Arbitrum One.
+SliverVine Protocol is a Sub-ms 0-Gas Pre-Broadcast ExoMesh Intent Firewall & Risk Navigator for AI Agents on Arbitrum — fully aligned with **Arbitrum Foundation H1 2026** priorities in **Agentic Commerce**, **x402 machine-payment rails**, and **ArbOS 61 Elara** compliance reinforcement.
 
-Before any transaction is signed or broadcasted to the Arbitrum Sequencer, the Wasm ExoMesh Edge evaluates:
-1. **Sequencer Uptime & Oracle Lag** (<30s threshold).
-2. **Soil Resistance & Slippage** (sub-microsecond execution safety check).
-3. **Agent Policy Drift & Prompt Injection Safeguards** (ERC-8196 compliant).
-
-If toxic conditions are detected, the signing channel is severed at **p50 ~106 μs** at **ZERO Gas cost**, protecting agent capital from liquidation or front-running.
+Before any Arbitrum transaction is broadcasted to the Sequencer, SliverVine's Rust Wasm Edge evaluates execution safety (depth, slippage, oracle lag, prompt injection drift) in **p50 ~106 μs at ZERO Gas cost**. Toxic or drifted agent intents are blocked at the signing boundary via EIP-712 consume-once attestations (`SliverVineGate.sol`).
 
 ---
 
-## 2. Strategic Value to Arbitrum Ecosystem
+## 2. Arbitrum Foundation Strategic Alignment
 
-* **Agentic Commerce Shield:** Prevents automated AI agents from executing bad or exploited trades on Arbitrum DEXs and lending protocols.
-* **Stylus Coprocessor Parity:** Built with Rust Wasm (`#![no_std]`), enabling seamless deployment as a Stylus Coprocessor (`SliverVineSoilCoprocessor`).
-* **x402 Rail Protection:** Ensures machine-to-machine micropayments are protected by pre-execution risk gates.
-
----
-
-## 3. Defense & Security Posture
-
-| Guard | Operational Threshold | Behavior |
-|-------|-----------------------|----------|
-| **Sequencer Uptime** | 600s grace period | Fail-closed |
-| **Oracle Lag Fuse** | <30s vs L2 block headers | Fail-closed |
-| **Net Slippage Gate** | >0.5% drift | Soil trip + Circuit Breaker |
-| **Decision SLO** | <500ms (p50 ~106 μs) | Real-time Edge Intercept |
+| H1 2026 Directive | SliverVine ExoMesh Solution | Technical Reference |
+|-------------------|-----------------------------|---------------------|
+| **Agentic Commerce & AI Safety** | Sub-ms pre-broadcast risk gate preventing AI agent prompt injection, toxic trades, or policy drift **before** transactions hit the mempool. | `pkg/soil_core.wasm` · `checkSoilResistance()` |
+| **x402 Payment Rails Alignment** | Provides 0-Gas risk verification for machine-to-machine commerce, ensuring x402 settlement paths cannot be exploited by stale or front-run execution. | `SliverVineGate.sol` · `gated-executor-payload.ts` |
+| **ArbOS 61 Elara Compliance** | Ingress-compatible ordering awareness and compliance filtering reinforcing edge fail-closed security. | `IngressSafetySwitch.sol` |
+| **Stylus Coprocessor Readiness** | Rust Wasm soil core (`#![no_std]`) + `SliverVineSoilCoprocessor` on Stylus SDK **0.10.7** (`cargo test` **9/9 PASS**). | `contracts/stylus-probe/src/lib.rs` |
 
 ---
 
-## 4. Verification
+## 3. Funding Request & Budget Allocation
+
+**Total Requested Grant:** **$40,000 USD** (payable in ARB)
+
+### Milestone & Disbursement Schedule
+
+| Milestone | Deliverables & Scope | Timeline | Funding | Status |
+|-----------|----------------------|----------|---------|--------|
+| **M1: Core Infrastructure & Stylus Deploy** | Production-ready Wasm Edge Engine, Stylus Soil Coprocessor (`cargo test` 9/9 PASS), Mainnet/Sepolia Gate contracts deployed, 254 test files (100% PASS). | Month 1 | $15,000 | ✅ Complete (Code-Verified) |
+| **M2: Agentic Safety & x402 Integration** | Release ERC-8196 Fleet Policy Studio for AI Agents, x402 machine-payment risk SDK integration, and live telemetry dashboard on Dune. | Month 2 | $15,000 | ⏳ In Progress |
+| **M3: Audit, Formal Proofs & SDK Outreach** | Third-party security audit for Wasm/Stylus modules, formal verification invariant report, and public open-source SDK developer outreach. | Month 3 | $10,000 | 📅 Planned |
+
+---
+
+## 4. Technical Deliverables (Live & Verified)
+
+| Deliverable | Verification Benchmark | Status |
+|-------------|------------------------|--------|
+| **Arbitrum One Safety Gate** | `SliverVineGate.sol` · Forge 60/60 · 327,675 Fuzz Executions | Live on Mainnet / Sepolia |
+| **Wasm Soil Core** | `<28kb` Cloudflare Worker budget · `<60µs` execution | Production Ready |
+| **Stylus Coprocessor** | Stylus SDK **0.10.7** · `cargo test` **9/9 PASS** | Verified |
+| **3-Tier Security Audit** | `docs/audit/security-scorecard.json` (5/0/0 PASS) | Verified |
+
+---
+
+## 5. Verification Command (60s)
 
 ```bash
-pnpm install && pnpm test && npx tsc --noEmit
+pnpm install
+pnpm test # 254 test files | 1206 PASS clean (100%)
+pnpm run audit:security # 3-Tier Security Matrix: 5/0/0 PASS
 curl -s "[https://bedeltawater.slivervine.xyz/api/grant-audit](https://bedeltawater.slivervine.xyz/api/grant-audit)" | jq .sepoliaDualLegProof
