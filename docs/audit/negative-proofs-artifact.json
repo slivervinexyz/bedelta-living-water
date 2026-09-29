@@ -1,0 +1,60 @@
+{
+  "schema": "silvervine.negative-proofs.v1",
+  "protocol": "SliverVine / BeΔ Living Water",
+  "generatedAt": "2026-09-17T14:47:55.201Z",
+  "overallVerdict": "FAIL",
+  "proofsPassed": "1/5",
+  "command": "pnpm verify:negative",
+  "proofs": [
+    {
+      "id": "stale-book-fail-closed",
+      "label": "500ms Stale Book → FAIL_CLOSED",
+      "expectedSignal": "FAIL_CLOSED",
+      "testFile": "tests/v2/fail-closed.test.ts",
+      "testName": "isL2BookFailClosed trips when snapshot age exceeds 500ms",
+      "status": "FAIL",
+      "durationMs": 352,
+      "error": "Command failed: pnpm exec vitest run \"tests/v2/fail-closed.test.ts\" -t \"isL2BookFailClosed trips when snapshot age exceeds 500ms\" --reporter=dot\n\u001b[31mNo test files found, exiting with code 1\n\u001b[39m\n\u001b[2mfilter: \u001b[22m\u001b[33mtests/v2/fail-closed.test.ts\u001b[39m\n\n\u001b[30m\u001b[42m unit \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.spec.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\n\u001b[30m\u001b[46m async-api \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33m**/node_modules/**\u001b[2m, \u001b[22m**/dist/**\u001b[2m, \u001b[22m**/cypress/**\u001b[2m, \u001b[22m**/.{idea,git,cache,output,temp}/**\u001b[2m, \u001b[22m**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\u001b[39m\n\n"
+    },
+    {
+      "id": "depth-soil-resistance-trip",
+      "label": "Orderbook Depth Insufficient → SOIL_RESISTANCE_TRIP",
+      "expectedSignal": "SOIL_RESISTANCE_TRIP",
+      "testFile": "tests/risk-control.test.ts",
+      "testName": "trips when explicit depthUsd is below MIN_DEPTH_USD",
+      "status": "FAIL",
+      "durationMs": 363,
+      "error": "Command failed: pnpm exec vitest run \"tests/risk-control.test.ts\" -t \"trips when explicit depthUsd is below MIN_DEPTH_USD\" --reporter=dot\n\u001b[31mNo test files found, exiting with code 1\n\u001b[39m\n\u001b[2mfilter: \u001b[22m\u001b[33mtests/risk-control.test.ts\u001b[39m\n\n\u001b[30m\u001b[42m unit \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.spec.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\n\u001b[30m\u001b[46m async-api \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33m**/node_modules/**\u001b[2m, \u001b[22m**/dist/**\u001b[2m, \u001b[22m**/cypress/**\u001b[2m, \u001b[22m**/.{idea,git,cache,output,temp}/**\u001b[2m, \u001b[22m**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\u001b[39m\n\n"
+    },
+    {
+      "id": "saga-ttl-reduce-only-flatten",
+      "label": "Saga TTL Expiry → REDUCE_ONLY_FLATTEN",
+      "expectedSignal": "REDUCE_ONLY_FLATTEN",
+      "testFile": "tests/integration/hl-2pc-execution.test.ts",
+      "testName": "flattens HL reduce-only when second leg TTL expires on commit",
+      "status": "FAIL",
+      "durationMs": 394,
+      "error": "Command failed: pnpm exec vitest run \"tests/integration/hl-2pc-execution.test.ts\" -t \"flattens HL reduce-only when second leg TTL expires on commit\" --reporter=dot\n\u001b[31mNo test files found, exiting with code 1\n\u001b[39m\n\u001b[2mfilter: \u001b[22m\u001b[33mtests/integration/hl-2pc-execution.test.ts\u001b[39m\n\n\u001b[30m\u001b[42m unit \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.spec.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\n\u001b[30m\u001b[46m async-api \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33m**/node_modules/**\u001b[2m, \u001b[22m**/dist/**\u001b[2m, \u001b[22m**/cypress/**\u001b[2m, \u001b[22m**/.{idea,git,cache,output,temp}/**\u001b[2m, \u001b[22m**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\u001b[39m\n\n"
+    },
+    {
+      "id": "flatten-failure-r20-deadlock",
+      "label": "Flatten Failure → R20_FLATTEN_FAILED Physical Deadlock",
+      "expectedSignal": "R20_FLATTEN_FAILED",
+      "testFile": "tests/core/intent-ledger.test.ts",
+      "testName": "triggers R20 hardlock when compensating flatten fails on commit rollback",
+      "status": "PASS",
+      "durationMs": 1772
+    },
+    {
+      "id": "session-cap-rejection",
+      "label": "Order Cap Exceeded → $5,000 Cap Rejection",
+      "expectedSignal": "$5,000 Cap Rejection",
+      "testFile": "tests/v2/session-cap.test.ts",
+      "testName": "$5,001 order triggers PHYSICALLY_SEVERED and severs signing channel",
+      "status": "FAIL",
+      "durationMs": 334,
+      "error": "Command failed: pnpm exec vitest run \"tests/v2/session-cap.test.ts\" -t \"$5,001 order triggers PHYSICALLY_SEVERED and severs signing channel\" --reporter=dot\n\u001b[31mNo test files found, exiting with code 1\n\u001b[39m\n\u001b[2mfilter: \u001b[22m\u001b[33mtests/v2/session-cap.test.ts\u001b[39m\n\n\u001b[30m\u001b[42m unit \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.test.ts\u001b[2m, \u001b[22msrc/**/*.spec.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\n\u001b[30m\u001b[46m async-api \u001b[49m\u001b[39m \n\n\u001b[2minclude: \u001b[22m\u001b[33mtests/api/**/*.test.ts\u001b[2m, \u001b[22mtests/adapters/gmx-v2-gm-balance-swr.test.ts\u001b[2m, \u001b[22mtests/components/grant-audit-fetch.test.ts\u001b[2m, \u001b[22mtests/middleware/engine-mode-router.test.ts\u001b[2m, \u001b[22mtests/worker-fetch.test.ts\u001b[39m\n\u001b[2mexclude:  \u001b[22m\u001b[33m**/node_modules/**\u001b[2m, \u001b[22m**/dist/**\u001b[2m, \u001b[22m**/cypress/**\u001b[2m, \u001b[22m**/.{idea,git,cache,output,temp}/**\u001b[2m, \u001b[22m**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\u001b[39m\n\n"
+    }
+  ],
+  "sha256Anchor": "sha256:5a2a60bfa92e3f1f4a87748932a043bf99aab4efe2befee0a5a79835479e65fd"
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "silvervine.dune-reconcile.v1",
+  "generatedAt": "2026-09-23T14:12:13.179Z",
+  "exomesh": {
+    "total_rows": 679,
+    "fail_closed_count": 611,
+    "allow_count": 68,
+    "simulated_loss_prevented_usd_total": 14145877,
+    "gas_saved_usd_total": 152.75,
+    "intercept_type_breakdown": {
+      "SOIL_RESISTANCE_TRIP": {
+        "count": 312,
+        "pct": 45.95
+      },
+      "HONEYPOT_DECOY": {
+        "count": 62,
+        "pct": 9.13
+      },
+      "OBSERVATORY_HAIRCUT": {
+        "count": 195,
+        "pct": 28.72
+      },
+      "MAX_ATTEMPTS_SEVERED": {
+        "count": 110,
+        "pct": 16.2
+      }
+    },
+    "venue_p50_latency_us": {
+      "gmx": 9.8,
+      "pendle": 12,
+      "usdai": 40.4,
+      "hyperliquid": 13.5,
+      "variational": 7.9
+    },
+    "csv_sha256": "b963e6caf020aabfb79a2e4ba461f3389928914d07d4c0e28146c5a8703a229f",
+    "csv_mtime_iso": "2026-09-23T13:36:32.895Z"
+  },
+  "sepsb": {
+    "case_count": 31,
+    "tpr_pct": 100,
+    "fpr_pct": 0,
+    "min_latency_us": 13.91,
+    "p50_latency_us": 37.04
+  },
+  "onchain": {
+    "total_rows": 5,
+    "fail_closed_count": 5,
+    "allow_count": 0,
+    "date_range": {
+      "earliest": "2026-09-19T23:35:33.000Z",
+      "latest": "2026-09-20T00:12:45.000Z"
+    },
+    "gates": {
+      "mainnet": "0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1",
+      "sepolia": "0xc66F96611a737c4e58706D0955594456eAb88959",
+      "stylus_mainnet": "0xc23587d6573dd134f95b02b0202ffbf84686625e",
+      "sanctuary_mainnet": "0xb174118bC0B84e8D6D59EEF2339e29bF7FCf8BF1"
+    },
+    "csv_sha256": "1398dd172fd4ca169912c1447a2431211af7a16153775a9a43b59593b4c8a3ec",
+    "rows": [
+      {
+        "timestamp": "2026-09-19T23:35:33.000Z",
+        "timestampMs": 1789860933000,
+        "block_number": "310687398",
+        "tx_hash": "0x1ec51fe0a9156835cecbdd3955cc03a56c62f58db1008b52bca271b4b6f7ba86",
+        "log_index": 12,
+        "chain_id": 421614,
+        "network": "sepolia",
+        "vm_execution": "solidity",
+        "event_name": "RiskTripBlocked",
+        "venue": "gmx",
+        "intercept_type": "SOIL_RESISTANCE_TRIP",
+        "status": "FAIL_CLOSED",
+        "simulated_loss_prevented_usd": 10464,
+        "gas_burned": 0.000004,
+        "source": "onchain:sepolia:RiskTripBlocked:0x1ec51fe0a9156835cecbdd3955cc03a56c62f58db1008b52bca271b4b6f7ba86:12"
+      },
+      {
+        "timestamp": "2026-09-20T00:00:42.000Z",
+        "timestampMs": 1789862442000,
+        "block_number": "310693393",
+        "tx_hash": "0x956effb7ec2cfd0a42de2cf6f00eb2b5781d7245151098a4ccd8654b1b3cecd7",
+        "log_index": 20,
+        "chain_id": 421614,
+        "network": "sepolia",
+        "vm_execution": "solidity",
+        "event_name": "RiskTripBlocked",
+        "venue": "gmx",
+        "intercept_type": "SOIL_RESISTANCE_TRIP",
+        "status": "FAIL_CLOSED",
+        "simulated_loss_prevented_usd": 5309,
+        "gas_burned": 0.000005,
+        "source": "onchain:sepolia:RiskTripBlocked:0x956effb7ec2cfd0a42de2cf6f00eb2b5781d7245151098a4ccd8654b1b3cecd7:20"
+      },
+      {
+        "timestamp": "2026-09-20T00:01:37.000Z",
+        "timestampMs": 1789862497000,
+        "block_number": "506935935",
+        "tx_hash": "0x53a26bb247cce9dde9b16ec185393e174a8c2c98212aec49959a1d22a591f562",
+        "log_index": 1,
+        "chain_id": 42161,
+        "network": "mainnet",
+        "vm_execution": "solidity",
+        "event_name": "RiskTripBlocked",
+        "venue": "gmx",
+        "intercept_type": "SOIL_RESISTANCE_TRIP",
+        "status": "FAIL_CLOSED",
+        "simulated_loss_prevented_usd": 5619,
+        "gas_burned": 0.000001,
+        "source": "onchain:mainnet:RiskTripBlocked:0x53a26bb247cce9dde9b16ec185393e174a8c2c98212aec49959a1d22a591f562:1"
+      },
+      {
+        "timestamp": "2026-09-20T00:04:45.000Z",
+        "timestampMs": 1789862685000,
+        "block_number": "506936680",
+        "tx_hash": "0xfa9635f0d1b008ad7a65008e19cd972d03512e9f7dc049856420f64f8cfddfe4",
+        "log_index": 0,
+        "chain_id": 42161,
+        "network": "mainnet",
+        "vm_execution": "stylus",
+        "event_name": "SoilCoprocessorEval",
+        "venue": "gmx",
+        "intercept_type": "SOIL_RESISTANCE_TRIP",
+        "status": "FAIL_CLOSED",
+        "simulated_loss_prevented_usd": 6959,
+        "gas_burned": 0.000001,
+        "source": "onchain:mainnet:stylus:SoilCoprocessorEval:0xc23587d6573dd134f95b02b0202ffbf84686625e:0xfa9635f0d1b008ad7a65008e19cd972d03512e9f7dc049856420f64f8cfddfe4:0"
+      },
+      {
+        "timestamp": "2026-09-20T00:12:45.000Z",
+        "timestampMs": 1789863165000,
+        "block_number": "506938504",
+        "tx_hash": "0x8629c9081a005d68b07e7679b2e90a83c27c43ec63c26e0fdaa23214221bfde2",
+        "log_index": 3,
+        "chain_id": 42161,
+        "network": "mainnet",
+        "vm_execution": "sanctuary",
+        "event_name": "RiskTripBlocked",
+        "venue": "gmx",
+        "intercept_type": "SOIL_RESISTANCE_TRIP",
+        "status": "FAIL_CLOSED",
+        "simulated_loss_prevented_usd": 6237,
+        "gas_burned": 0.000001,
+        "source": "onchain:mainnet:sanctuary:RiskTripBlocked:0x8629c9081a005d68b07e7679b2e90a83c27c43ec63c26e0fdaa23214221bfde2:3"
+      }
+    ]
+  }
+}

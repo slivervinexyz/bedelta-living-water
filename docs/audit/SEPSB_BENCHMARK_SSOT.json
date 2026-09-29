@@ -1,0 +1,378 @@
+{
+  "schema": "silvervine.sepsb-benchmark.ssot.v1",
+  "protocol": "SliverVine Protocol",
+  "harness": "sepsb-benchmark-runner",
+  "benchmark_title": "SliverVine ExoMesh Pre-Consensus Security Benchmark (SEPSB)",
+  "standard_version": "SEPSB-v1.0-Santenmoku",
+  "generatedAt": "2026-09-21T02:02:09.118Z",
+  "benchmark_environment": {
+    "detectedAt": "2026-09-21T02:02:09.118Z",
+    "platform": "linux",
+    "arch": "x64",
+    "nodeVersion": "v22.23.2",
+    "cpuModel": "AMD EPYC 7763 64-Core Processor",
+    "cpuCores": 2,
+    "cpuSpeedMhz": 0,
+    "totalMemoryMb": 7938
+  },
+  "corpus": {
+    "toxicCases": 16,
+    "benignCases": 15
+  },
+  "metrics": {
+    "truePositiveRatePct": 100,
+    "falsePositiveRatePct": 0,
+    "reflexLatencyP50Us": 1.283,
+    "reflexLatencyP99Us": 6.102,
+    "observatoryParadoxMisblockCount": 0,
+    "latencyIterations": 10000
+  },
+  "targets": {
+    "tprMinPct": 99.5,
+    "fprMaxPct": 0.5,
+    "observatoryMisblockMax": 0
+  },
+  "verdict": "PASS",
+  "killSwitchTriggered": false,
+  "caseResults": [
+    {
+      "id": "toxic-infinite-approve-erc20",
+      "category": "infinite_approve",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "UNAUTHORIZED_SPENDER_REJECTED",
+      "setType": "toxic",
+      "venue": "gmx",
+      "reflexLatencyUs": 37.044
+    },
+    {
+      "id": "toxic-permit2-infinite-approve",
+      "category": "permit2_phishing",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "UNAUTHORIZED_SPENDER_REJECTED",
+      "setType": "toxic",
+      "venue": "gmx",
+      "reflexLatencyUs": 13.913
+    },
+    {
+      "id": "toxic-domain-drift-eip712",
+      "category": "domain_drift",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "VENUE_DRIFT_REJECTED",
+      "setType": "toxic",
+      "venue": "pendle",
+      "reflexLatencyUs": 42.522
+    },
+    {
+      "id": "toxic-ai-4th-strike-retry",
+      "category": "ai_4th_strike_retry",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "MAX_ATTEMPTS_OR_DRIFT",
+      "setType": "toxic",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 25.015
+    },
+    {
+      "id": "toxic-gmx-oi-skew",
+      "category": "gmx_oi_skew",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=3",
+      "setType": "toxic",
+      "venue": "gmx",
+      "reflexLatencyUs": 23.443
+    },
+    {
+      "id": "toxic-pendle-oracle-lag",
+      "category": "pendle_oracle_lag",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=9",
+      "setType": "toxic",
+      "venue": "pendle",
+      "reflexLatencyUs": 43.493
+    },
+    {
+      "id": "toxic-usdai-peg-drift",
+      "category": "usdai_peg_drift",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=524289",
+      "setType": "toxic",
+      "venue": "usdai",
+      "reflexLatencyUs": 48.472
+    },
+    {
+      "id": "toxic-usdai-oracle-stale",
+      "category": "usdai_oracle_stale",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=262145",
+      "setType": "toxic",
+      "venue": "usdai",
+      "reflexLatencyUs": 23.503
+    },
+    {
+      "id": "toxic-hyperliquid-spread-jitter",
+      "category": "hyperliquid_spread_jitter",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=513",
+      "setType": "toxic",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 15.015
+    },
+    {
+      "id": "toxic-hyperliquid-session-velocity",
+      "category": "hyperliquid_session_velocity",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=129",
+      "setType": "toxic",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 35.015
+    },
+    {
+      "id": "toxic-variational-stale-quote",
+      "category": "variational_stale_quote",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=4097",
+      "setType": "toxic",
+      "venue": "variational",
+      "reflexLatencyUs": 38.473
+    },
+    {
+      "id": "toxic-variational-olp-threshold",
+      "category": "variational_olp_threshold",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "flags=8193",
+      "setType": "toxic",
+      "venue": "variational",
+      "reflexLatencyUs": 39.482
+    },
+    {
+      "id": "toxic-soil-cross-venue",
+      "category": "soil_cross_venue",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "CROSS_VENUE_SLIPPAGE=14.2857%>0.48000000000000004%|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+      "setType": "toxic",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 31.015
+    },
+    {
+      "id": "toxic-pendle-gmx-open-thin-liquidity",
+      "category": "pendle_gmx_open_violation",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "FAIL_CLOSED_BLOCK",
+      "setType": "toxic",
+      "venue": "pendle",
+      "reflexLatencyUs": 32.583
+    },
+    {
+      "id": "toxic-venue-drift-contract",
+      "category": "venue_drift",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "VENUE_DRIFT_REJECTED",
+      "setType": "toxic",
+      "venue": "variational",
+      "reflexLatencyUs": 59.492
+    },
+    {
+      "id": "toxic-shallow-depth-honeypot",
+      "category": "depth_insufficient",
+      "expected": "block",
+      "actual": "block",
+      "pass": true,
+      "detail": "DEPTH_USD=50000<99980|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+      "setType": "toxic",
+      "venue": "gmx",
+      "reflexLatencyUs": 35.743
+    },
+    {
+      "id": "benign-normal-transfer-gmx",
+      "category": "normal_transfer",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "setType": "benign",
+      "venue": "gmx",
+      "reflexLatencyUs": 25.493
+    },
+    {
+      "id": "benign-gmx-increase",
+      "category": "gmx_increase",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "setType": "benign",
+      "venue": "gmx",
+      "reflexLatencyUs": 23.522
+    },
+    {
+      "id": "benign-gmx-decrease",
+      "category": "gmx_decrease",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "gmx",
+      "reflexLatencyUs": 40.503
+    },
+    {
+      "id": "benign-pendle-swap",
+      "category": "pendle_swap",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "pendle",
+      "reflexLatencyUs": 38.472
+    },
+    {
+      "id": "benign-usdai-vault-deposit",
+      "category": "usdai_vault_deposit",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "usdai",
+      "reflexLatencyUs": 50.483
+    },
+    {
+      "id": "benign-usdai-peg-stable",
+      "category": "usdai_peg_stable",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "usdai",
+      "reflexLatencyUs": 37.492
+    },
+    {
+      "id": "benign-hyperliquid-rfq-clean",
+      "category": "hyperliquid_rfq_clean",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 17.015
+    },
+    {
+      "id": "benign-hyperliquid-session-key",
+      "category": "hyperliquid_session_key",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "hyperliquid",
+      "reflexLatencyUs": 26.015
+    },
+    {
+      "id": "benign-variational-trade-clean",
+      "category": "variational_trade_clean",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "variational",
+      "reflexLatencyUs": 65.503
+    },
+    {
+      "id": "benign-variational-rfq-normal",
+      "category": "variational_rfq_normal",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "flags=0",
+      "setType": "benign",
+      "venue": "variational",
+      "reflexLatencyUs": 47.493
+    },
+    {
+      "id": "benign-trusted-infinite-approve",
+      "category": "trusted_approve",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "setType": "benign",
+      "venue": "gmx",
+      "reflexLatencyUs": 46.483
+    },
+    {
+      "id": "benign-observatory-emergency-close",
+      "category": "observatory_emergency_close",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "observatoryParadox": true,
+      "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
+      "setType": "benign",
+      "venue": "pendle",
+      "reflexLatencyUs": 30.483
+    },
+    {
+      "id": "benign-observatory-reduce-position",
+      "category": "observatory_reduce",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "observatoryParadox": true,
+      "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
+      "setType": "benign",
+      "venue": "pendle",
+      "reflexLatencyUs": 39.493
+    },
+    {
+      "id": "benign-eip712-allowlisted-permit",
+      "category": "eip712_permit",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "setType": "benign",
+      "venue": "pendle",
+      "reflexLatencyUs": 38.833
+    },
+    {
+      "id": "benign-gmx-healthy-open",
+      "category": "gmx_open_healthy",
+      "expected": "allow",
+      "actual": "allow",
+      "pass": true,
+      "detail": "PASS_GREENLIGHT",
+      "setType": "benign",
+      "venue": "gmx",
+      "reflexLatencyUs": 17.482
+    }
+  ]
+}

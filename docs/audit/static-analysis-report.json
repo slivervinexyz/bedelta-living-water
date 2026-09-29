@@ -1,0 +1,32 @@
+{
+  "schema": "silvervine.static-analysis.v3",
+  "generatedAt": "2026-09-06T03:10:41.282Z",
+  "narrative": "behavioral_pass_does_not_imply_web3_security",
+  "tier": "nightly",
+  "tools": {
+    "echidna": {
+      "id": "echidna",
+      "label": "Echidna property fuzz",
+      "verdict": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 1275,
+      "detail": "Unique instructions: 883 | Unique codehashes: 2 | Corpus size: 4 | Seed: 7722676919801120269 | Total calls: 2016 |  |  | WARNING: Slither was explicitly disabled. Echidna uses Slither (https://github.com/crytic/slither) to perform source analysis, which makes fuzzing more effective. You should enable it."
+    },
+    "forge-deep-fuzz": {
+      "id": "forge-deep-fuzz",
+      "label": "Foundry deep fuzz",
+      "verdict": "PASS",
+      "exitCode": 0,
+      "elapsedMs": 71444,
+      "detail": "[PASS] testFuzz_AcceptanceRegionIsExact(uint64,uint32,uint8,uint16,uint256,uint32) (runs: 65535, μ: 30176, ~: 30347) | [PASS] testFuzz_ArbitraryKeyCannotReachQuorum(uint256,uint256) (runs: 65535, μ: 45516, ~: 45366) | [PASS] testFuzz_EveryFieldIsSigned(uint8,uint256) (runs: 65535, μ: 39899, ~: 39916) | [PASS] testFuzz_NeverConsumableTwice(uint256,uint16) (runs: 65535, μ: 77437, ~: 77327) | [PASS] testFuzz_OnlySubjectMayConsume(address,uint256) (runs: 65535, μ: 28119, ~: 28119) | Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 68.53s (341.71s CPU time) |  | Ran 1 test suite in 68.5"
+    }
+  },
+  "exploratoryFindings": {},
+  "summary": {
+    "pass": 2,
+    "fail": 0,
+    "skipped": 0
+  },
+  "verdict": "PASS",
+  "scorecard": "docs/audit/security-scorecard.json"
+}

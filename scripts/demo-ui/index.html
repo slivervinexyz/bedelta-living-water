@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SliverVine FW-11 — Infinite Approve Intercept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <main class="mx-auto max-w-xl px-6 py-16">
+      <p class="text-xs uppercase tracking-widest text-emerald-400">FW-11 · ExoMesh</p>
+      <h1 class="mt-2 text-2xl font-semibold">Agent Infinite Approve Demo</h1>
+      <p class="mt-3 text-sm text-slate-400">
+        Triggers <code class="text-emerald-300">eth_sendTransaction</code> ERC20
+        <code class="text-emerald-300">approve(spender, uint256.max)</code>.
+        Guard wrap is demo-only (SDK import from <code>scripts/demo-ui</code>).
+      </p>
+      <button
+        id="fw11-trigger"
+        type="button"
+        class="mt-8 w-full rounded-lg bg-emerald-500 px-4 py-3 font-medium text-slate-950 hover:bg-emerald-400"
+      >
+        Trigger Agent Infinite Approve (Permit2 / ERC20)
+      </button>
+    </main>
+    <div
+      id="fw11-toast"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6"
+      role="alert"
+    >
+      <div class="max-w-xl rounded-xl border border-rose-500/60 bg-slate-900 p-6 shadow-2xl">
+        <p id="fw11-toast-msg" class="text-base font-medium text-rose-300"></p>
+        <p id="fw11-toast-code" class="mt-2 hidden text-xs font-mono text-rose-400/80"></p>
+        <pre
+          id="fw11-toast-json"
+          class="mt-4 hidden max-h-48 overflow-auto rounded bg-slate-950 p-3 text-xs text-emerald-300"
+        ></pre>
+        <button
+          id="fw11-toast-close"
+          type="button"
+          class="mt-4 rounded bg-slate-800 px-3 py-1.5 text-sm text-slate-200"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <script src="/fw11-boot.js"></script>
+  </body>
+</html>

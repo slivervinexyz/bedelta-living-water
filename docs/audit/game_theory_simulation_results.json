@@ -1,0 +1,23 @@
+{
+  "simulation": "soil_game_theory_monte_carlo",
+  "scenario": "GMX/HL depth -80% in 1s + adversarial sandwich/toxic flow",
+  "iterations": 10000,
+  "seed": 42,
+  "parameters": {
+    "minDepthUsd": 100000.0,
+    "maxSlippage": 0.005,
+    "depthCollapseFactor": 0.2,
+    "sandwichSpreadBpsMax": 85.0
+  },
+  "toxicFlowBlockedPercent": "87.39%",
+  "toxicFlowBlockedCount": 8739,
+  "lpCapitalSavedUsd": 9888170.89,
+  "aggregate": {
+    "toxicSlippageWithoutGuardUsd": 2671520.71,
+    "toxicSlippageWithSanctuaryGuardUsd": 1066877.8,
+    "impermanentLossWithoutGuardUsd": 16301452.55,
+    "impermanentLossWithSanctuaryGuardUsd": 8017924.57,
+    "netLpProtectionUsd": 9888170.89
+  },
+  "checkSoilResistanceModel": "dynamic slippage fuse + MIN_DEPTH_USD fail-closed"
+}

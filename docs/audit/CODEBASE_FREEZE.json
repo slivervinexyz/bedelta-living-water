@@ -1,0 +1,24 @@
+{
+  "schema": "silvervine.codebase-freeze.v1",
+  "phase": 4,
+  "active": true,
+  "frozenAt": "2026-09-14",
+  "reason": "Arbitrum Buildathon & DEX Grant submission",
+  "benchmark_lock": {
+    "alloc": "<16 KiB",
+    "iterations": 10000
+  },
+  "locked_interfaces": [
+    "src/core/soil-wasm-runtime.ts",
+    "src/core/sanctuary-wasm-runtime.ts",
+    "src/core/stylus-soil-abi-bridge.ts",
+    "src/core/policy-guard-stylus-gate.ts",
+    "src/config/contract-deployments.ts",
+    "contracts/src/SliverVineAgentPolicyGuardV2.sol"
+  ],
+  "locked_wasm": [
+    "pkg/soil_core.wasm",
+    "pkg/sanctuary_invariants.wasm"
+  ],
+  "stylus_coprocessor_mainnet": "0xc23587d6573dd134f95b02b0202ffbf84686625e"
+}

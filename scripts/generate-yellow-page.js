@@ -1,0 +1,247 @@
+#!/usr/bin/env node
+/**
+ * SliverVine / BeDelta Living Water — Yellow Page Audit SOP
+ *
+ * Measures the latest commit delta, gates on change volume / critical paths,
+ * runs the test suite, and appends a changelog entry to docs/audit/changelog.md.
+ */
+
+import { spawn } from "node:child_process";
+import { appendFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
+const CHANGELOG = join(ROOT, "docs/audit/changelog.md");
+
+const CRITICAL_PREFIXES = ["src/adapters/", "src/core/", "tests/"];
+const LINE_THRESHOLD = 80;
+
+function printGenesisBanner() {
+  console.log([
+    "====================================================",
+    "::  SANTENMOKU  ::  SliverVine Protocol v1.0",
+    "::  :santen[boku  ::  Human-Machine Nexus Active",
+    "====================================================",
+  ].join("\n"));
+}
+
+function execGit(args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("git", args, {
+      cwd: ROOT,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    let stdout = "";
+    let stderr = "";
+
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk;
+    });
+
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code !== 0) {
+        reject(new Error(`git ${args.join(" ")} failed (${code}): ${stderr.trim()}`));
+        return;
+      }
+      resolve(stdout);
+    });
+  });
+}
+
+function runTests() {
+  return new Promise((resolve) => {
+    const child = spawn("npm", ["test"], {
+      cwd: ROOT,
+      shell: true,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    let output = "";
+
+    child.stdout.on("data", (chunk) => {
+      output += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      output += chunk;
+    });
+
+    child.on("error", (err) => {
+      resolve({ code: 1, output: `${output}\n${err.message}` });
+    });
+
+    child.on("close", (code) => {
+      resolve({ code: code ?? 1, output });
+    });
+  });
+}
+
+function parseDiffStat(statOutput) {
+  const lines = statOutput.trim().split("\n").filter(Boolean);
+  const summaryLine = lines.at(-1) ?? "";
+
+  const summaryMatch = summaryLine.match(
+    /(\d+) files? changed(?:, (\d+) insertions?\(\+\))?(?:, (\d+) deletions?\(-\))?/,
+  );
+
+  const insertions = Number(summaryMatch?.[2] ?? 0);
+  const deletions = Number(summaryMatch?.[3] ?? 0);
+  const totalChangedLines = insertions + deletions;
+
+  const changedFiles = lines.slice(0, -1).map((line) => {
+    const trimmed = line.trim();
+    const pipeIndex = trimmed.lastIndexOf("|");
+    const pathPart = pipeIndex >= 0 ? trimmed.slice(0, pipeIndex).trim() : trimmed;
+    return pathPart;
+  });
+
+  return { changedFiles, insertions, deletions, totalChangedLines, summaryLine };
+}
+
+function touchesCriticalPath(changedFiles) {
+  return changedFiles.some((file) =>
+    CRITICAL_PREFIXES.some((prefix) => file.startsWith(prefix)),
+  );
+}
+
+function parseTestResults(output) {
+  const passedMatch = output.match(/Tests\s+(\d+)\s+passed(?:\s+\|\s+\d+\s+failed)?\s+\((\d+)\)/);
+  if (passedMatch) {
+    const passed = Number(passedMatch[1]);
+    const total = Number(passedMatch[2]);
+    return `${passed}/${total} Passed`;
+  }
+
+  const failedMatch = output.match(/Tests\s+(\d+)\s+failed\s+\|\s+(\d+)\s+passed\s+\((\d+)\)/);
+  if (failedMatch) {
+    const passed = Number(failedMatch[2]);
+    const total = Number(failedMatch[3]);
+    return `${passed}/${total} Passed (failures detected)`;
+  }
+
+  return "Unknown (see CI output)";
+}
+
+function formatTimestamp(date = new Date()) {
+  return date.toLocaleString("sv-SE", { timeZone: "Asia/Taipei" }).replace("T", " ");
+}
+
+function formatAuditEntry({ timestamp, commitHash, commitSubject, testResults, diff }) {
+  const fileLines =
+    diff.changedFiles.length > 0
+      ? diff.changedFiles.map((file) => `- \`${file}\``).join("\n")
+      : "- _(no file paths parsed)_";
+
+  return [
+    "",
+    "---",
+    "",
+    `## Yellow Page Audit Entry — ${timestamp} (UTC+8)`,
+    "",
+    `- **Date & Timestamp:** ${timestamp} (Asia/Taipei)`,
+    `- **Commit Hash:** \`${commitHash}\``,
+    `- **Commit Subject:** ${commitSubject}`,
+    `- **Test Results:** ${testResults}`,
+    `- **Changed Lines:** ${diff.totalChangedLines} (+${diff.insertions}/-${diff.deletions})`,
+    "",
+    "### Changed Files Summary",
+    "",
+    fileLines,
+    "",
+    "```text",
+    diff.summaryLine || "no diff summary",
+    "```",
+    "",
+  ].join("\n");
+}
+
+function ensureChangelog() {
+  if (existsSync(CHANGELOG)) {
+    return;
+  }
+
+  mkdirSync(dirname(CHANGELOG), { recursive: true });
+  writeFileSync(
+    CHANGELOG,
+    [
+      "# Yellow Page Audit Changelog",
+      "",
+      "Automated BeDelta Living Water / SliverVine Protocol audit entries generated by `pnpm run audit:log`.",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+}
+
+async function main() {
+  printGenesisBanner();
+
+  let diffStat;
+
+  try {
+    diffStat = await execGit(["diff", "HEAD~1", "--stat"]);
+  } catch (err) {
+    console.error("[audit:log] Unable to diff HEAD~1:", err.message);
+    process.exit(1);
+  }
+
+  const diff = parseDiffStat(diffStat);
+  const critical = touchesCriticalPath(diff.changedFiles);
+  const overThreshold = diff.totalChangedLines > LINE_THRESHOLD;
+
+  if (!overThreshold && !critical) {
+    console.log(
+      `[audit:log] Skipped — ${diff.totalChangedLines} changed lines (threshold ${LINE_THRESHOLD}) and no critical-path edits.`,
+    );
+    process.exit(0);
+  }
+
+  const triggerReason = [
+    overThreshold ? `>${LINE_THRESHOLD} lines changed` : null,
+    critical ? "critical path modified" : null,
+  ]
+    .filter(Boolean)
+    .join(", ");
+
+  console.log(`[audit:log] Triggered (${triggerReason}). Running tests…`);
+
+  const [commitHash, commitSubject, testRun] = await Promise.all([
+    execGit(["rev-parse", "HEAD"]).then((out) => out.trim()),
+    execGit(["log", "-1", "--format=%s"]).then((out) => out.trim()),
+    runTests(),
+  ]);
+
+  const testResults =
+    testRun.code === 0
+      ? parseTestResults(testRun.output)
+      : `${parseTestResults(testRun.output)} — exit code ${testRun.code}`;
+
+  const entry = formatAuditEntry({
+    timestamp: formatTimestamp(),
+    commitHash,
+    commitSubject,
+    testResults,
+    diff,
+  });
+
+  ensureChangelog();
+  appendFileSync(CHANGELOG, entry, "utf8");
+
+  console.log(`[audit:log] Appended entry for ${commitHash.slice(0, 7)} to docs/audit/changelog.md`);
+  console.log(`[audit:log] Tests: ${testResults}`);
+
+  if (testRun.code !== 0) {
+    process.exit(testRun.code);
+  }
+}
+
+main().catch((err) => {
+  console.error("[audit:log] Fatal:", err.message);
+  process.exit(1);
+});
