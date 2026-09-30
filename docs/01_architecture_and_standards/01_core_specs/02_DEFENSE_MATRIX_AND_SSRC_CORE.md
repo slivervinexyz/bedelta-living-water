@@ -225,7 +225,7 @@ $$
 $$
 
 $$
-\Delta_{\text{net}} = \Delta_{\text{GMX\_GM}} + \Delta_{\text{HL\_Short}} \equiv 0
+\Delta_{\mathrm{net}} = \Delta_{\mathrm{GMX,GM}} + \Delta_{\mathrm{HL,Short}} \equiv 0
 $$
 
 $$
@@ -233,7 +233,7 @@ $$
 $$
 
 $$
-t_{\text{reflector\_p50}} \sim 106\,\mu\mathrm{s} \ll t_{\text{mempool\_broadcast}}
+t_{\mathrm{reflector,p50}} \sim 106\,\mu\mathrm{s} \ll t_{\mathrm{mempool,broadcast}}
 $$
 
 **Companion fuses:** Dynamic Account Risk Ceiling (V0.8 Baseline: Equity-Weighted SL; V1.0 Mainnet: Dynamic Adaptive Engine) · Sequencer 600s grace · Oracle lag fail-closed · Root slippage breaker (0.5%). · Configurable Dynamic Slippage Deadman is an additional fail-closed fuse on the AA / SDK path.
@@ -264,11 +264,11 @@ $$
 **Formal de-peg / oracle deviation (SSOT):**
 
 $$
-\Delta P_{\mathrm{USDai}} = \left| P_{\mathrm{sUSDai}} - 1.00 \right|,\quad \frac{d P_{\mathrm{USDai}}}{dt} > \theta_{\mathrm{depeg}} \implies \mathtt{FLAGS\_USDAI\_PEG\_DRIFT}
+\Delta P_{\mathrm{USDai}} = \left| P_{\mathrm{sUSDai}} - 1.00 \right|,\quad \frac{d P_{\mathrm{USDai}}}{dt} > \theta_{\mathrm{depeg}} \implies \mathtt{FLAGS-USDAI-PEG-DRIFT}
 $$
 
 $$
-\mathrm{age}_{\mathrm{oracle}} > 7{,}200{,}000\,\mathrm{ms} \implies \mathtt{FLAG\_USDAI\_ORACLE\_STALE}
+\mathrm{age}_{\mathrm{oracle}} > 7{,}200{,}000\,\mathrm{ms} \implies \mathtt{FLAG-USDAI-ORACLE-STALE}
 $$
 
 #### § AI Guarded Pool Factory Protocol (V1.0)

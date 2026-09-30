@@ -77,7 +77,7 @@ Where referenced in Pillar Set Y and technical specs, the **80/20 Pareto rule** 
 #### Core Physical Invariants (Judge Quick Reference)
 
 $$
-\Delta_{\text{net}} = \Delta_{\text{GMX\_GM}} + \Delta_{\text{HL\_Short}} \equiv 0
+\Delta_{\mathrm{net}} = \Delta_{\mathrm{GMX,GM}} + \Delta_{\mathrm{HL,Short}} \equiv 0
 $$
 
 $$
@@ -85,7 +85,7 @@ $$
 $$
 
 $$
-t_{\text{reflector\_p50}} \sim 106\,\mu\mathrm{s} \ll t_{\text{mempool\_broadcast}}
+t_{\mathrm{reflector,p50}} \sim 106\,\mu\mathrm{s} \ll t_{\mathrm{mempool,broadcast}}
 $$
 
 **SliverVine ExoMesh** is a **pre-execution circuit breaker**, not:

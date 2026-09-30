@@ -420,7 +420,7 @@ Scenario **B** (`DEGRADED_WARN`) is a **demo-only monitor preview** — the SDK 
 ### Core Invariants
 
 $$
-\Delta_{\text{net}} = \Delta_{\text{GMX\_GM}} + \Delta_{\text{HL\_Short}} \equiv 0
+\Delta_{\mathrm{net}} = \Delta_{\mathrm{GMX,GM}} + \Delta_{\mathrm{HL,Short}} \equiv 0
 $$
 
 $$
@@ -428,7 +428,7 @@ $$
 $$
 
 $$
-t_{\text{reflector\_p50}} \sim 106\,\mu\mathrm{s} \ll t_{\text{mempool\_broadcast}}
+t_{\mathrm{reflector,p50}} \sim 106\,\mu\mathrm{s} \ll t_{\mathrm{mempool,broadcast}}
 $$
 
 ---

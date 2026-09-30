@@ -236,7 +236,7 @@ Full harness specs · `[MAINNET_LIVE_EXECUTION_EVIDENCE]` → [02_LIVE_FIRE_EVID
 ## Core Invariants
 
 $$
-\Delta_{\text{net}} = \Delta_{\text{GMX\_GM}} + \Delta_{\text{HL\_Short}} \equiv 0
+\Delta_{\mathrm{net}} = \Delta_{\mathrm{GMX,GM}} + \Delta_{\mathrm{HL,Short}} \equiv 0
 $$
 
 $$
@@ -244,7 +244,7 @@ $$
 $$
 
 $$
-t_{\text{reflector\_p50}} \sim 106\,\mu\mathrm{s} \ll t_{\text{mempool\_broadcast}}
+t_{\mathrm{reflector,p50}} \sim 106\,\mu\mathrm{s} \ll t_{\mathrm{mempool,broadcast}}
 $$
 
 Derivations → [architecture/02_DEFENSE_MATRIX_AND_SSRC_CORE.md](../01_architecture_and_standards/01_core_specs/02_DEFENSE_MATRIX_AND_SSRC_CORE.md)

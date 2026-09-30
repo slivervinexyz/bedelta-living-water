@@ -138,7 +138,7 @@ ORDER BY minute_time ASC;
 
 **Metric definition:**
 
-$$\text{PEV} = \sum \text{blocked\_intent\_notional\_usd}$$
+$$\text{PEV} = \sum \text{blockedIntentNotionalUsd}$$
 
 Sourced exclusively from decoded **`RiskTripBlocked`** event logs emitted by Sepolia Gate [0xc66F96611a737c4e58706D0955594456eAb88959](https://sepolia.arbiscan.io/address/0xc66f96611a737c4e58706d0955594456eab88959). Each `RiskTripBlocked` log carries the nominal USD notional of the toxic intent severed pre-broadcast (0-Gas fail-closed path).
 

@@ -263,7 +263,7 @@ T3  ExoMesh pre-consensus reflex ← SSRC SEVERANCE
 ### 0-Gas Pre-Consensus Invariant
 
 $$
-\text{FAIL\_CLOSED} \implies \text{baseProvider.request()} \text{ is NEVER invoked}
+\mathrm{FAIL\,CLOSED} \implies \text{baseProvider.request()} \text{ is NEVER invoked}
 $$
 
 Every reject path in Signatures A · B · C · C1 honeypot · C3 async drift satisfies this invariant — verified by `expect(base.calls).toHaveLength(0)` patterns across Retail Guard Vitest.

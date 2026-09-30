@@ -105,7 +105,7 @@ HL execution is **0-Gas on Arbitrum** (L1 orderbook app-chain). Legacy HL stubs 
 ### 2.3 Cross-venue match invariant
 
 $$
-\Delta_{\text{net}} = \Delta_{\text{GMX\_GM}} + \Delta_{\text{HL\_Short}} \equiv 0
+\Delta_{\mathrm{net}} = \Delta_{\mathrm{GMX,GM}} + \Delta_{\mathrm{HL,Short}} \equiv 0
 $$
 
 [dual-wallet-structured-log.ts](../src/services/gmx-cross-wallet-hedge-lib/dual-wallet-structured-log.ts) emits:

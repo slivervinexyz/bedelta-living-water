@@ -140,7 +140,7 @@ Pre-consensus severance means **`baseProvider.request()` is never invoked** — 
 **Formula (default model):**
 
 $$
-\text{gas\_saved\_wei} = \text{gas\_price\_wei} \times \text{estimated\_gas\_units}
+\text{gasSavedWei} = \text{gasPriceWei} \times \text{estimatedGasUnits}
 $$
 
 | Tx class | `estimated_gas_units` default | Notes |
@@ -159,13 +159,13 @@ $$
 **Invariant:**
 
 $$
-\text{FAIL\_CLOSED} \implies \text{actual\_tx\_gas\_wei} = 0 \quad \land \quad \text{gas\_saved\_wei} \geq 0
+\mathrm{FAIL\,CLOSED} \implies \text{actualTxGasWei} = 0 \quad \land \quad \text{gasSavedWei} \geq 0
 $$
 
 **PEV linkage:**
 
 $$
-\text{notional\_usd\_at\_risk} \approx \text{token\_amount} \times \text{spot\_usd} \quad \Rightarrow \quad \text{PEV} = \sum \text{notional\_usd\_at\_risk} \; \text{where} \; \text{gate\_action\_code} = 1
+\text{notionalUsdAtRisk} \approx \text{tokenAmount} \times \text{spotUsd} \quad \Rightarrow \quad \text{PEV} = \sum \text{notionalUsdAtRisk} \; \text{where} \; \text{gateActionCode} = 1
 $$
 
 ### 3.3 Deterministic `event_id` & `agent_id`
@@ -352,7 +352,7 @@ Traditional CVEs describe **vulnerable software versions**. SliverVine introduce
 SliverVine proposes **ARB** as a cross-framework safety score derived from PCTII telemetry:
 
 $$
-\text{ARB\_score} = 100 \times \left(1 - \frac{\text{toxic\_attempts}}{\text{total\_guarded\_requests}}\right) \times \left(1 - \frac{\text{p50\_eval\_latency\_us}}{10{,}000}\right)
+\mathrm{ARB\,score} = 100 \times \left(1 - \frac{\text{toxicAttempts}}{\text{totalGuardedRequests}}\right) \times \left(1 - \frac{\text{p50EvalLatencyUs}}{10{,}000}\right)
 $$
 
 | ARB tier | Score | Meaning |
