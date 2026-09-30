@@ -61,7 +61,7 @@ The SDK is **chain-agnostic at the EIP-1193 layer** — any EVM wallet injecting
 
 1. **Problem:** AI agents and retail wallets sign toxic calldata before any server simulation can warn.
 2. **Solution:** Apache-2.0 EIP-1193 middleware with Wasm-accelerated reflex core ([pkg/soil_core.wasm](../../../pkg/soil_core.wasm)).
-3. **Proof:** `npx vitest run tests/sdk/` → **48/48 PASS** · Permit2 · EIP-6963 · intent ring severance.
+3. **Proof:** `npx vitest run tests/sdk/` → **59/59 PASS** (8 test files) · Permit2 · EIP-6963 · intent ring severance.
 
 ### Dual-Brand Positioning
 

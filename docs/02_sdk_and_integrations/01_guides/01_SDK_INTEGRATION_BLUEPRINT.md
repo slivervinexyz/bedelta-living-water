@@ -10,7 +10,7 @@
 
 > **Standards compliance:** SliverVine Protocol is **100% compliant** with standard [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) / [EIP-5792](https://eips.ethereum.org/EIPS/eip-5792) and [ERC-7540](https://eips.ethereum.org/EIPS/eip-7540) specs, while extending them into **0-Gas pre-consensus security supersets** (ExoMesh & Sanctuary).
 
-> **Verification:** `npx vitest run tests/sdk/` → **48/48 PASS** (5 test files) · **Tier 0 CLI:** `pnpm demo:exomesh` · `pnpm demo:exomesh -- --json`
+> **Verification:** `npx vitest run tests/sdk/` → **59/59 PASS** (8 test files) · **Tier 0 SSOT:** `npx vitest run tests/sdk/retail-guard-provider.test.ts` **35/35** · **Tier 0 CLI:** `pnpm demo:exomesh` · `pnpm demo:exomesh -- --json`
 
 ---
 
@@ -293,7 +293,7 @@ RESULT: ✅ ExoMesh Agentic Guard Matrix Complete — Scenarios A–D Replayed (
 
 ```bash
 npx vitest run tests/sdk/retail-guard-provider.test.ts   # Tier 0 SSOT — 35/35 · 7/7 reason codes
-npx vitest run tests/sdk/                                 # Full SDK suite — 48/48 PASS
+npx vitest run tests/sdk/                                 # Full SDK suite — 59/59 PASS (8 files)
 pnpm demo:exomesh -- --json                               # CLI structured output (CI / Dune)
 ```
 
@@ -309,7 +309,7 @@ pnpm demo:exomesh -- --json                               # CLI structured outpu
 | `CHANNEL_SEVERED` | Post-severance hard block |
 | `RPC_TRANSPORT_SYNC_FAILED` | `evaluateRpcTransportProtocol` |
 
-**Full SDK baseline: 48/48 PASS**
+**Full SDK baseline: 59/59 PASS (8 test files)**
 
 ---
 

@@ -110,7 +110,7 @@ $$
 | **Determinism / layout** | Same file (6 additional cases) | C-ABI slot packing · `hashKeyToSlotIndex` mask · `resetIntentRingSlab` |
 
 ```bash
-npx vitest run tests/core/intent-sinking-audit.test.ts   # 8/8 PASS · includes <16 KiB worker gate
+npx vitest run tests/core/intent-sinking-audit.test.ts   # 11/11 PASS · includes <16 KiB worker gate
 ```
 
 ### Foundry On-Chain Ring Slab Fuzz Proof ([IntentRingSlabLib.sol](../../../contracts/src/libs/IntentRingSlabLib.sol))
@@ -390,7 +390,7 @@ Run: `pnpm tsx scripts/benchmark-stylus-opcode.ts` · SSOT: [stylus_core.rs](../
 ### 3.7 ExoMesh Agentic Guard (EIP-1193/5792/6963+) — EIP-1193/5792/6963 Agentic Wallet Guard Extension
 
 > **SSOT:** [docs/02_sdk_and_integrations/01_guides/01_SDK_INTEGRATION_BLUEPRINT.md](../../02_sdk_and_integrations/01_guides/01_SDK_INTEGRATION_BLUEPRINT.md) · [src/sdk/exomesh-agentic-wallet-guard/](../../../src/sdk/exomesh-agentic-wallet-guard/) · **License:** Apache-2.0 wrapper · Wasm IP core [pkg/soil_core.wasm](../../../pkg/soil_core.wasm)  
-> **Vitest:** `npx vitest run tests/sdk/` → **48/48 PASS** (5 files)
+> **Vitest:** `npx vitest run tests/sdk/` → **59/59 PASS** (8 test files)
 
 The **ExoMesh Agentic Guard** (`@slivervine/exomesh-agentic-wallet-guard`) — an **EIP-1193/5792/6963 Agentic Wallet Guard Extension** — packages ExoMesh's pre-consensus reflex arc as **ultra-lightweight browser middleware** compliant with standard EIP-1193 / EIP-5792 / EIP-6963 specs, extended into a **0-Gas pre-consensus superset**. No Cloudflare Worker required for C-end wallet and agentic wallet integrations.
 

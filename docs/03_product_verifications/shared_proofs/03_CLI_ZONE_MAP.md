@@ -37,7 +37,7 @@ pnpm test       # Full System Regression Suite (255 test files | 1211 PASS clean
 | `pnpm demo:hl -- --trip` | Hyperliquid session key auth · WS depth guard | **FAIL_CLOSED** · session / spread breach |
 | `pnpm demo:pendle -- --trip` | Pendle PT/YT sentinel · guarded pool factory · **USD.AI** markets (USDai in · sUSDai redeem) | **FAIL_CLOSED** · oracle TTL / PT maturity breach |
 | `pnpm preflight:venues --venue=pendle` | Wallet A funding wedge — **USDai** + ETH (not USDC) | `WRONG_TOKEN_USDC_FOR_PENDLE` when only USDC funded |
-| `pnpm demo:usdai -- --trip` | USD.ai AI-compute yield collateral guard (`evaluateUsdAiCollateralGuard`) | **FAIL_CLOSED** · peg / oracle / depth breach · [usdai-adapter.test.ts](../../../tests/adapters/usdai-adapter.test.ts) **5/5** |
+| `pnpm demo:usdai -- --trip` | USD.ai AI-compute yield collateral guard (`evaluateUsdAiCollateralGuard`) | **FAIL_CLOSED** · peg / oracle / depth breach · [usdai-adapter.test.ts](../../../tests/adapters/usdai-adapter.test.ts) **7/7** |
 | `pnpm demo:variational -- --trip` | Variational Omni RFQ stale quote & OLP depth guard | **FAIL_CLOSED** (`VARIATIONAL_STALE_QUOTE_BREACH`) |
 | `pnpm demo:gmx -- --trip` | **Judge fast track** — GMX V2 Arbitrum native hard anchor | **FAIL_CLOSED** · pool skew / price-impact breach |
 | `pnpm demo:variational -- --trip` | **Judge fast track** — Variational multi-venue RFQ gate | **FAIL_CLOSED** · stale quote / OLP breach |

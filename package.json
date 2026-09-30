@@ -22,6 +22,8 @@
     "docs:fix-links:dry": "tsx scripts/fix-public-doc-links.ts --dry-run",
     "docs:link-audit": "tsx scripts/docs-link-audit.ts",
     "docs:math-audit": "tsx scripts/docs-math-audit.ts",
+    "docs:test-counts-audit": "tsx scripts/docs-test-counts-audit.ts",
+    "vitest:scoped-ssot": "tsx scripts/generate-vitest-scoped-ssot.ts",
     "docs:metrics-audit": "tsx scripts/docs-metrics-audit.ts",
     "docs:commit-audit": "tsx scripts/docs-commit-audit.ts",
     "docs:dune-reconcile": "tsx scripts/docs-dune-reconcile.ts",

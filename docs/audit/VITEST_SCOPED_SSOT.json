@@ -1,0 +1,164 @@
+{
+  "schema": "silvervine.vitest-scoped.ssot.v1",
+  "generatedAt": "2026-09-30T08:55:27.546Z",
+  "suites": {
+    "tests/adapters/across-ingress-bridge.test.ts": {
+      "tests": 6
+    },
+    "tests/adapters/gmx-smart-route-payload-binding.test.ts": {
+      "tests": 5
+    },
+    "tests/adapters/gmx-v2-invariants.test.ts": {
+      "tests": 2
+    },
+    "tests/adapters/pendle-market-oracle.test.ts": {
+      "tests": 9
+    },
+    "tests/adapters/pendle-pool-factory.test.ts": {
+      "tests": 6
+    },
+    "tests/adapters/pendle-pt-expiry-guard.test.ts": {
+      "tests": 5
+    },
+    "tests/adapters/pendle-pt-registry.test.ts": {
+      "tests": 8
+    },
+    "tests/adapters/treasury-escort-router.test.ts": {
+      "tests": 6
+    },
+    "tests/adapters/uniswap-v4-hook-guard.test.ts": {
+      "tests": 14
+    },
+    "tests/adapters/usdai-adapter.test.ts": {
+      "tests": 7
+    },
+    "tests/adapters/zerodev-aa-dryrun-harness.test.ts": {
+      "tests": 3
+    },
+    "tests/adapters/zerodev-aa-gate.test.ts": {
+      "tests": 4
+    },
+    "tests/api/grant-audit-dune-telemetry.test.ts": {
+      "tests": 2
+    },
+    "tests/chaos/orbit-agentic-failclosed-chaos.test.ts": {
+      "tests": 5
+    },
+    "tests/clock-monotonicity.test.ts": {
+      "tests": 14
+    },
+    "tests/config/contract-deployments.test.ts": {
+      "tests": 3
+    },
+    "tests/core/core-import-boundary.test.ts": {
+      "tests": 3
+    },
+    "tests/core/intent-sinking-audit.test.ts": {
+      "tests": 11
+    },
+    "tests/core/portfolio-cascade-replay.test.ts": {
+      "tests": 4
+    },
+    "tests/core/protocol-mask-sync.test.ts": {
+      "tests": 6
+    },
+    "tests/core/risk-severance.test.ts": {
+      "tests": 5
+    },
+    "tests/core/wallet-isolation-guard.test.ts": {
+      "tests": 6
+    },
+    "tests/core/wasm-ffi-alignment.test.ts": {
+      "tests": 2
+    },
+    "tests/defense/rpc-whitelist.test.ts": {
+      "tests": 8
+    },
+    "tests/demo/gmx-v2-agent-flow.demo.test.ts": {
+      "tests": 4
+    },
+    "tests/demo/hyperliquid-agent-flow.demo.test.ts": {
+      "tests": 4
+    },
+    "tests/demo/pendle-ai-agent-flow.demo.test.ts": {
+      "tests": 4
+    },
+    "tests/erc7540-async-escort.test.ts": {
+      "tests": 3
+    },
+    "tests/guards/pendle-gmx-cross-guard.test.ts": {
+      "tests": 5
+    },
+    "tests/guards/variational-instrument-guard.zero.test.ts": {
+      "tests": 5
+    },
+    "tests/risk-control/margin-buffer.test.ts": {
+      "tests": 5
+    },
+    "tests/risk-control/pendle-soil-guard.test.ts": {
+      "tests": 3
+    },
+    "tests/risk-control/soil-threshold-jitter.test.ts": {
+      "tests": 2
+    },
+    "tests/rootProtectionService.test.ts": {
+      "tests": 6
+    },
+    "tests/scripts/chaos-blackswan-stress.test.ts": {
+      "tests": 6
+    },
+    "tests/sdk/": {
+      "tests": 59,
+      "command": "npx vitest run tests/sdk/",
+      "files": 8
+    },
+    "tests/sdk/decorator.test.ts": {
+      "tests": 6
+    },
+    "tests/sdk/eip5792-send-calls.test.ts": {
+      "tests": 3
+    },
+    "tests/sdk/eip7702-auth-guard.test.ts": {
+      "tests": 3
+    },
+    "tests/sdk/erc7683-intent-guard.test.ts": {
+      "tests": 3
+    },
+    "tests/sdk/exomesh-sdk-bridge-armor.test.ts": {
+      "tests": 2
+    },
+    "tests/sdk/retail-guard-provider.test.ts": {
+      "tests": 35
+    },
+    "tests/services/api/erc7710-intent-expiry.test.ts": {
+      "tests": 2
+    },
+    "tests/services/api/pendle-shield.test.ts": {
+      "tests": 7
+    },
+    "tests/services/cross-venue-fail-safe.test.ts": {
+      "tests": 5
+    },
+    "tests/services/cross-wallet-cold-start-guard.test.ts": {
+      "tests": 3
+    },
+    "tests/services/dual-wallet-telemetry.test.ts": {
+      "tests": 2
+    },
+    "tests/services/gateway-lock-hud.test.ts": {
+      "tests": 7
+    },
+    "tests/services/scheduled-gmx-hedge.test.ts": {
+      "tests": 7
+    },
+    "tests/services/session-key-gates.test.ts": {
+      "tests": 11
+    },
+    "tests/wasm/stylus-gmx-parity.test.ts": {
+      "tests": 6
+    },
+    "tests/wasm/stylus-soil-wasm.test.ts": {
+      "tests": 6
+    }
+  }
+}
