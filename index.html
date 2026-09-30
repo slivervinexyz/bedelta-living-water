@@ -8,6 +8,21 @@
       name="description"
       content="SliverVine Protocol (BeΔ) — SliverVine ExoMesh — Pre-Consensus Intent Firewall for AI Agents on Arbitrum"
     />
+    <meta
+      property="og:title"
+      content="SliverVine Protocol (BeΔ) — Pre-Consensus Intent Firewall for AI Agents on Arbitrum"
+    />
+    <meta
+      property="og:description"
+      content="SliverVine Protocol (BeΔ) — SliverVine ExoMesh — Pre-Consensus Intent Firewall for AI Agents on Arbitrum"
+    />
+    <meta property="og:url" content="https://bedeltawater.slivervine.xyz/" />
+    <meta
+      property="og:image"
+      content="https://bedeltawater.slivervine.xyz/brand/Logo_BeDeltaLivingWater_small.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <title>SliverVine Protocol (BeΔ) — SliverVine ExoMesh — Pre-Consensus Intent Firewall for AI Agents on Arbitrum</title>
     <style>
       :root {
@@ -31,6 +46,12 @@
         font-weight: 600;
         line-height: 1.35;
       }
+      h2 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin: 1.25rem 0 0.5rem;
+        color: #e8e8e8;
+      }
       p {
         color: #9ca3af;
       }
@@ -40,9 +61,18 @@
       a {
         color: #58a6ff;
       }
+      code {
+        font-size: 0.88em;
+        color: #c9d1d9;
+      }
       .muted {
         font-size: 0.9rem;
         color: #6b7280;
+      }
+      .section-lead {
+        font-size: 0.9rem;
+        color: #8b949e;
+        margin: 0.35rem 0 0.75rem;
       }
     </style>
   </head>
@@ -61,12 +91,84 @@
       <strong>Primary product:</strong> One-line <strong>EIP-1193+</strong> middleware for
       integrators — pre-consensus <code>request()</code> guard that wraps existing MetaMask /
       Rabby / Viem / ZeroDev providers (not an RPC proxy; not a new wallet).
-      <strong>0-Gas fail-closed on reject.</strong>
+      <strong>0-Gas fail-closed on reject</strong> at the Arbitrum pre-broadcast boundary.
+    </p>
+
+    <h2>Module A &amp; B (Dual Pillar)</h2>
+    <ul>
+      <li>
+        <strong>Module A — ExoMesh:</strong> EIP-1193+ pre-consensus guard
+        (<code>withRetailGuardProvider</code>).
+      </li>
+      <li>
+        <strong>Module B — Sanctuary / Ingress:</strong> ERC-7540+ async escort + Ingress
+        Sanctuary (<code>pnpm demo:sanctuary</code> / <code>pnpm demo:ingress</code>).
+      </li>
+    </ul>
+
+    <h2>For judges &amp; Buildathon</h2>
+    <p>
+      <a
+        href="https://github.com/slivervinexyz/bedelta-living-water/blob/main/JUDGE_BRIEF.md"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Judge brief — JUDGE_BRIEF.md (GitHub)</a
+      >
+    </p>
+    <p class="section-lead">
+      <strong>Live ~60s:</strong>
+      <code>pnpm demo:exomesh -- --trip</code> · <code>pnpm demo:gmx -- --trip</code> ·
+      <code>npx vitest run tests/sdk/retail-guard-provider.test.ts</code>
+    </p>
+    <p class="section-lead">
+      <strong>Video ~120s:</strong>
+      <code>pnpm demo:exomesh -- --non-interactive</code> ·
+      <code>pnpm demo:sanctuary -- --non-interactive</code> ·
+      <code>pnpm demo:ingress -- --non-interactive</code>
+      <span class="muted">(do not use <code>demo:ingress -- --trip</code>)</span>
+    </p>
+
+    <h2>Arbitrum on-chain anchors</h2>
+    <p>
+      Pre-broadcast intent firewall on <strong>Arbitrum One (42161)</strong> and
+      <strong>Sepolia (421614)</strong> — <strong>SliverVineGate</strong> attestation anchors:
     </p>
     <ul>
       <li>
-        <a href="https://silvervinelabs.com" target="_blank" rel="noopener noreferrer"
-          >🌿 SilverVine Labs</a
+        <a
+          href="https://arbiscan.io/address/0x71D7d26f98110c5DE3df0fCbddCf2A3A2BC6e2f1"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Mainnet Gate 0x71D7…e2f1</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://sepolia.arbiscan.io/address/0xc66F96611a737c4e58706D0955594456eAb88959"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Sepolia Gate 0xc66F…8959</a
+        >
+      </li>
+    </ul>
+
+    <h2>Verify &amp; documentation</h2>
+    <ul>
+      <li>
+        <a href="/api/grant-audit" target="_blank" rel="noopener noreferrer"
+          >Audit provenance — GET /api/grant-audit (JSON)</a
+        >
+        <p class="muted">
+          Static SHA-256 provenance archive (not a live oracle). Try:
+          <code
+            >curl -s https://bedeltawater.slivervine.xyz/api/grant-audit | jq
+            .provenanceVerified</code
+          >
+        </p>
+      </li>
+      <li>
+        <a href="/api/health" target="_blank" rel="noopener noreferrer"
+          >Worker health — GET /api/health (JSON)</a
         >
       </li>
       <li>
@@ -74,7 +176,7 @@
           href="https://github.com/slivervinexyz/bedelta-living-water"
           target="_blank"
           rel="noopener noreferrer"
-          >⭐ GitHub — bedelta-living-water</a
+          >GitHub — bedelta-living-water</a
         >
       </li>
       <li>
@@ -82,20 +184,31 @@
           href="https://github.com/slivervinexyz/bedelta-living-water/blob/main/docs/03_product_verifications/03_DELIVERABLES_AND_PROOFS.md"
           target="_blank"
           rel="noopener noreferrer"
-          >📦 Deliverables and Proofs — finished SKU overview (GitHub)</a
+          >Deliverables and Proofs — finished SKU overview (GitHub)</a
         >
       </li>
       <li>
-        <a href="/api/grant-audit" target="_blank" rel="noopener noreferrer"
-          >📋 Audit provenance — GET /api/grant-audit (JSON)</a
-        >
-      </li>
-      <li>
-        <a href="/api/health" target="_blank" rel="noopener noreferrer"
-          >💚 Worker health — GET /api/health (JSON)</a
+        <a
+          href="https://github.com/slivervinexyz/bedelta-living-water/blob/main/docs/0A_grants/arbitrum/ARBITRUM_ONE_PAGER.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Arbitrum technical one-pager (GitHub)</a
         >
       </li>
     </ul>
+
+    <h2>Contact</h2>
+    <ul>
+      <li>
+        <a href="https://silvervinelabs.com" target="_blank" rel="noopener noreferrer"
+          >SilverVine Labs</a
+        >
+      </li>
+      <li>
+        <a href="mailto:grants@silvervinelabs.com">grants@silvervinelabs.com</a>
+      </li>
+    </ul>
+
     <p class="muted">Telemetry (supplementary):</p>
     <ul>
       <li>
@@ -103,7 +216,7 @@
           href="https://dune.com/silvervinelabs/slivervine-protocol"
           target="_blank"
           rel="noopener noreferrer"
-          >📊 Dune Operational Shield</a
+          >Dune Operational Shield</a
         >
       </li>
       <li>
@@ -111,7 +224,7 @@
           href="https://dune.com/silvervinelabs/slivervine-sepsb-stress"
           target="_blank"
           rel="noopener noreferrer"
-          >📈 Dune SEPSB Stress Matrix</a
+          >Dune SEPSB Stress Matrix</a
         >
       </li>
     </ul>
