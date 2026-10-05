@@ -7,7 +7,7 @@
   "version_symbol": "BeΔ Living Water",
   "ssrc_codename": "SSRC",
   "ssrc_full_name": "Slivervine Stylus ReflexCore",
-  "generatedAt": "2026-09-29T13:38:00.000Z",
+  "generatedAt": "2026-10-05T00:02:36.962Z",
   "release_anchor": {
     "branch": "main",
     "verified_commit": "227c13b",
@@ -150,14 +150,14 @@
     ]
   },
   "benchmark_environment": {
-    "detectedAt": "2026-09-21T02:02:09.118Z",
+    "detectedAt": "2026-10-05T00:02:36.962Z",
     "platform": "linux",
     "arch": "x64",
-    "nodeVersion": "v22.23.2",
+    "nodeVersion": "v22.23.3",
     "cpuModel": "AMD EPYC 7763 64-Core Processor",
-    "cpuCores": 2,
+    "cpuCores": 4,
     "cpuSpeedMhz": 0,
-    "totalMemoryMb": 7938
+    "totalMemoryMb": 15990
   },
   "sepsb_benchmark": {
     "ssot": "docs/audit/SEPSB_BENCHMARK_SSOT.json",
@@ -168,8 +168,8 @@
     "verdict": "PASS",
     "truePositiveRatePct": 100,
     "falsePositiveRatePct": 0,
-    "reflexLatencyP50Us": 1.283,
-    "reflexLatencyP99Us": 6.102
+    "reflexLatencyP50Us": 1.343,
+    "reflexLatencyP99Us": 5.4
   },
   "onchain_indexer_pipeline": {
     "status": "LIVE_EXPORT",
@@ -198,7 +198,7 @@
   "deployments": {
     "ssot_source": "src/config/contract-deployments.ts",
     "eip712_domain": "SliverVineExoMesh",
-    "synced_at": "2026-09-29T13:38:08.051Z",
+    "synced_at": "2026-10-05T00:02:37.327Z",
     "mainnet_ignition_tx": "0x54c153e9a41f704b5eb0ae554eac593d1110d62bd826ff094e72f2bd60c1b0c6",
     "stylus_coprocessor_mainnet": "0xc23587d6573dd134f95b02b0202ffbf84686625e",
     "chains": {

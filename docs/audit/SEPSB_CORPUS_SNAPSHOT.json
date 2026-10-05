@@ -2,7 +2,7 @@
   "schema": "silvervine.sepsb-corpus-snapshot.v1",
   "benchmark_title": "SliverVine ExoMesh Pre-Consensus Security Benchmark (SEPSB)",
   "standard_version": "SEPSB-v1.0-Santenmoku",
-  "generatedAt": "2026-09-21T02:02:09.118Z",
+  "generatedAt": "2026-10-05T00:02:36.962Z",
   "sources": {
     "toxic": "tests/p0/corpus/toxic-set.json",
     "benign": "tests/p0/corpus/benign-set.json"
@@ -490,7 +490,7 @@
         "detail": "UNAUTHORIZED_SPENDER_REJECTED",
         "setType": "toxic",
         "venue": "gmx",
-        "reflexLatencyUs": 37.044
+        "reflexLatencyUs": 37.144
       },
       {
         "id": "toxic-permit2-infinite-approve",
@@ -501,7 +501,7 @@
         "detail": "UNAUTHORIZED_SPENDER_REJECTED",
         "setType": "toxic",
         "venue": "gmx",
-        "reflexLatencyUs": 13.913
+        "reflexLatencyUs": 13.953
       },
       {
         "id": "toxic-domain-drift-eip712",
@@ -512,7 +512,7 @@
         "detail": "VENUE_DRIFT_REJECTED",
         "setType": "toxic",
         "venue": "pendle",
-        "reflexLatencyUs": 42.522
+        "reflexLatencyUs": 42.543
       },
       {
         "id": "toxic-ai-4th-strike-retry",
@@ -534,7 +534,7 @@
         "detail": "flags=3",
         "setType": "toxic",
         "venue": "gmx",
-        "reflexLatencyUs": 23.443
+        "reflexLatencyUs": 23.493
       },
       {
         "id": "toxic-pendle-oracle-lag",
@@ -545,7 +545,7 @@
         "detail": "flags=9",
         "setType": "toxic",
         "venue": "pendle",
-        "reflexLatencyUs": 43.493
+        "reflexLatencyUs": 43.463
       },
       {
         "id": "toxic-usdai-peg-drift",
@@ -556,7 +556,7 @@
         "detail": "flags=524289",
         "setType": "toxic",
         "venue": "usdai",
-        "reflexLatencyUs": 48.472
+        "reflexLatencyUs": 48.492
       },
       {
         "id": "toxic-usdai-oracle-stale",
@@ -567,7 +567,7 @@
         "detail": "flags=262145",
         "setType": "toxic",
         "venue": "usdai",
-        "reflexLatencyUs": 23.503
+        "reflexLatencyUs": 23.483
       },
       {
         "id": "toxic-hyperliquid-spread-jitter",
@@ -611,7 +611,7 @@
         "detail": "flags=8193",
         "setType": "toxic",
         "venue": "variational",
-        "reflexLatencyUs": 39.482
+        "reflexLatencyUs": 39.483
       },
       {
         "id": "toxic-soil-cross-venue",
@@ -619,10 +619,10 @@
         "expected": "block",
         "actual": "block",
         "pass": true,
-        "detail": "CROSS_VENUE_SLIPPAGE=14.2857%>0.48000000000000004%|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+        "detail": "CROSS_VENUE_SLIPPAGE=14.2857%>0.45000000000000007%|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
         "setType": "toxic",
         "venue": "hyperliquid",
-        "reflexLatencyUs": 31.015
+        "reflexLatencyUs": 31.014
       },
       {
         "id": "toxic-pendle-gmx-open-thin-liquidity",
@@ -633,7 +633,7 @@
         "detail": "FAIL_CLOSED_BLOCK",
         "setType": "toxic",
         "venue": "pendle",
-        "reflexLatencyUs": 32.583
+        "reflexLatencyUs": 32.403
       },
       {
         "id": "toxic-venue-drift-contract",
@@ -644,7 +644,7 @@
         "detail": "VENUE_DRIFT_REJECTED",
         "setType": "toxic",
         "venue": "variational",
-        "reflexLatencyUs": 59.492
+        "reflexLatencyUs": 59.443
       },
       {
         "id": "toxic-shallow-depth-honeypot",
@@ -652,10 +652,10 @@
         "expected": "block",
         "actual": "block",
         "pass": true,
-        "detail": "DEPTH_USD=50000<99980|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
+        "detail": "DEPTH_USD=50000<100030|ARBITRUM_SEQUENCER_PROBE_MISSING|SOFT_CONFIRMATION_PROBE_MISSING",
         "setType": "toxic",
         "venue": "gmx",
-        "reflexLatencyUs": 35.743
+        "reflexLatencyUs": 35.453
       }
     ],
     "benignResults": [
@@ -667,7 +667,7 @@
         "pass": true,
         "setType": "benign",
         "venue": "gmx",
-        "reflexLatencyUs": 25.493
+        "reflexLatencyUs": 25.433
       },
       {
         "id": "benign-gmx-increase",
@@ -677,7 +677,7 @@
         "pass": true,
         "setType": "benign",
         "venue": "gmx",
-        "reflexLatencyUs": 23.522
+        "reflexLatencyUs": 23.442
       },
       {
         "id": "benign-gmx-decrease",
@@ -688,7 +688,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "gmx",
-        "reflexLatencyUs": 40.503
+        "reflexLatencyUs": 40.433
       },
       {
         "id": "benign-pendle-swap",
@@ -699,7 +699,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "pendle",
-        "reflexLatencyUs": 38.472
+        "reflexLatencyUs": 38.423
       },
       {
         "id": "benign-usdai-vault-deposit",
@@ -710,7 +710,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "usdai",
-        "reflexLatencyUs": 50.483
+        "reflexLatencyUs": 50.452
       },
       {
         "id": "benign-usdai-peg-stable",
@@ -721,7 +721,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "usdai",
-        "reflexLatencyUs": 37.492
+        "reflexLatencyUs": 37.443
       },
       {
         "id": "benign-hyperliquid-rfq-clean",
@@ -732,7 +732,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "hyperliquid",
-        "reflexLatencyUs": 17.015
+        "reflexLatencyUs": 17.014
       },
       {
         "id": "benign-hyperliquid-session-key",
@@ -743,7 +743,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "hyperliquid",
-        "reflexLatencyUs": 26.015
+        "reflexLatencyUs": 26.014
       },
       {
         "id": "benign-variational-trade-clean",
@@ -754,7 +754,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "variational",
-        "reflexLatencyUs": 65.503
+        "reflexLatencyUs": 65.452
       },
       {
         "id": "benign-variational-rfq-normal",
@@ -765,7 +765,7 @@
         "detail": "flags=0",
         "setType": "benign",
         "venue": "variational",
-        "reflexLatencyUs": 47.493
+        "reflexLatencyUs": 47.442
       },
       {
         "id": "benign-trusted-infinite-approve",
@@ -775,7 +775,7 @@
         "pass": true,
         "setType": "benign",
         "venue": "gmx",
-        "reflexLatencyUs": 46.483
+        "reflexLatencyUs": 46.442
       },
       {
         "id": "benign-observatory-emergency-close",
@@ -787,7 +787,7 @@
         "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
         "setType": "benign",
         "venue": "pendle",
-        "reflexLatencyUs": 30.483
+        "reflexLatencyUs": 30.443
       },
       {
         "id": "benign-observatory-reduce-position",
@@ -799,7 +799,7 @@
         "detail": "EMERGENCY_DELEVERAGE_ALLOWED",
         "setType": "benign",
         "venue": "pendle",
-        "reflexLatencyUs": 39.493
+        "reflexLatencyUs": 39.443
       },
       {
         "id": "benign-eip712-allowlisted-permit",
@@ -809,7 +809,7 @@
         "pass": true,
         "setType": "benign",
         "venue": "pendle",
-        "reflexLatencyUs": 38.833
+        "reflexLatencyUs": 38.453
       },
       {
         "id": "benign-gmx-healthy-open",
@@ -820,7 +820,7 @@
         "detail": "PASS_GREENLIGHT",
         "setType": "benign",
         "venue": "gmx",
-        "reflexLatencyUs": 17.482
+        "reflexLatencyUs": 17.442
       }
     ]
   }
